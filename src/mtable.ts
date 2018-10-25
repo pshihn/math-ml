@@ -11,6 +11,11 @@ export class MathTableElement extends MathTableBaseElement {
   @property({ type: String }) framespacing = '0.4em 0.5ex';
   @property({ type: String }) width?: string;
 
+  constructor() {
+    super();
+    this.columnalign = this.columnalign || 'center';
+  }
+
   render(): TemplateResult {
     return html`
     <style>
@@ -114,7 +119,24 @@ export class MathTableElement extends MathTableBaseElement {
       s.removeProperty('--math-table-rowspacing');
     }
 
-    // TODO: column lines
-    // TOOD: row lines
+    if (this.columnalign) {
+      const split = this.columnalign.trim().split(' ').filter((d) => {
+        if (d.trim()) {
+          return true;
+        }
+        return false;
+      });
+      if (split.length > 1) {
+        const slot = this.shadowRoot!.querySelector('slot') as HTMLSlotElement;
+        if (slot) {
+          slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
+            return (d as HTMLElement).tagName === 'M-TR' || (d as HTMLElement).tagName === 'M-LABELEDTR';
+          }).forEach((d) => {
+            const row = (d as MathTableBaseElement);
+            row.columnalign = row.columnalign || (this.columnalign!).trim();
+          });
+        }
+      }
+    }
   }
 }

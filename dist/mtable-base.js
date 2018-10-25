@@ -13,9 +13,6 @@ export class MathTableBaseElement extends MathMLElement {
         const s = this.style;
         if (this.columnalign) {
             switch (this.columnalign) {
-                case 'center':
-                    s.setProperty('--math-ml-columnalign', 'center');
-                    break;
                 case 'left':
                     s.setProperty('--math-ml-columnalign', 'left');
                     break;
@@ -23,7 +20,8 @@ export class MathTableBaseElement extends MathMLElement {
                     s.setProperty('--math-ml-columnalign', 'right');
                     break;
                 default:
-                    s.removeProperty('--math-ml-columnalign');
+                case 'center':
+                    s.setProperty('--math-ml-columnalign', 'center');
                     break;
             }
         }

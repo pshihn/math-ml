@@ -8,6 +8,7 @@ export declare class MathTableElement extends MathTableBaseElement {
     rowspacing: string;
     framespacing: string;
     width?: string;
+    constructor();
     render(): TemplateResult;
     updated(): void;
 }

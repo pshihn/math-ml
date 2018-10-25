@@ -22,11 +22,41 @@ export class MathTRElement extends MathTableBaseElement {
         --math-table-column-border: none;
       }
     </style>
-    <slot></slot>
+    <slot @slotchange="${this.refreshSlot}"></slot>
     `;
   }
 
   updated() {
     this.updateAlignment();
+    this.refreshSlot();
+  }
+
+  private refreshSlot() {
+    if (!this.shadowRoot) {
+      return;
+    }
+    const slot = this.shadowRoot!.querySelector('slot') as HTMLSlotElement;
+    if (!slot) {
+      return;
+    }
+    if (this.columnalign) {
+      const split = this.columnalign.trim().split(' ').filter((d) => {
+        if (d.trim()) {
+          return true;
+        }
+        return false;
+      });
+      if (split.length > 1) {
+        const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
+          return (d as HTMLElement).tagName === 'M-TD';
+        });
+        for (let i = 0; i < split.length; i++) {
+          if (i >= nodes.length) {
+            break;
+          }
+          (nodes[i] as MathTableBaseElement).columnalign = split[i];
+        }
+      }
+    }
   }
 }
