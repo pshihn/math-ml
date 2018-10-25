@@ -4,3 +4,6 @@ import './mn.js';
 import './mo.js';
 import './mi.js';
 import './ms.js';
+import './mspace.js';
+import './mtext.js';
+import './mglyph.js';
