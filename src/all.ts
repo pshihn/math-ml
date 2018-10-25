@@ -7,3 +7,7 @@ import './ms.js';
 import './mspace.js';
 import './mtext.js';
 import './mglyph.js';
+import './mtd.js';
+import './mtr.js';
+import './mlabeledtr.js';
+import './mtable.js';
