@@ -51,6 +51,9 @@ let MathOElement = class MathOElement extends MathMLElement {
       :host(.mo-separator) {
         margin: 0 0.2em 0 0;
       }
+      :host(.mo-product) {
+        margin: 0;
+      }
       :host([largeop]) {
         font-size: var(--int-math-ml-largeop-size, inherit);
       }
@@ -59,7 +62,7 @@ let MathOElement = class MathOElement extends MathMLElement {
     `;
     }
     updated() {
-        let separatorOp = false;
+        let specialRule = '';
         let effectiveForm = this.form;
         if (!effectiveForm) {
             const parent = this.parentElement;
@@ -77,12 +80,15 @@ let MathOElement = class MathOElement extends MathMLElement {
             if (!effectiveForm) {
                 const text = (this.textContent || '').trim();
                 if (text === ',' || text === ';') {
-                    separatorOp = true;
+                    specialRule = 'separator';
+                }
+                else if (text === '.' || text === '⋅') {
+                    specialRule = 'product';
                 }
             }
         }
         effectiveForm = effectiveForm || 'infix';
-        const newFormStyle = separatorOp ? 'separator' : effectiveForm;
+        const newFormStyle = specialRule || effectiveForm;
         if (this.formStyle !== newFormStyle) {
             if (this.formStyle) {
                 this.classList.remove(this.formStyle);

@@ -11,3 +11,6 @@ import './mtd.js';
 import './mtr.js';
 import './mlabeledtr.js';
 import './mtable.js';
+import './msup.js';
+import './msub.js';
+import './msubsup.js';
