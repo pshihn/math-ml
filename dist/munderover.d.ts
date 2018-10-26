@@ -5,4 +5,5 @@ export declare class MathUnderOverElement extends MathMLElement {
     align: MathAlignType;
     render(): TemplateResult;
     updated(): void;
+    private refreshSlot;
 }

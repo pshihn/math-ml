@@ -17,9 +17,10 @@ export class MathUnderElement extends MathMLElement {
         width: 100%;
         line-height: 1;
         margin: 0;
-        text-align: var(--math-over-align, center);
+        text-align: var(--math-under-align, center);
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
+        font-size: var(--math-under-font-size, 0.8em);
       }
     </style>
     <div class="vertical layout">
@@ -32,14 +33,15 @@ export class MathUnderElement extends MathMLElement {
     const s = this.style;
     switch (this.align) {
       case 'right':
-        s.setProperty('--math-over-align', 'right');
+        s.setProperty('--math-under-align', 'right');
         break;
       case 'left':
-        s.setProperty('--math-over-align', 'left');
+        s.setProperty('--math-under-align', 'left');
         break;
       default:
-        s.setProperty('--math-over-align', 'center');
+        s.setProperty('--math-under-align', 'center');
         break;
     }
+    s.setProperty('--math-under-font-size', this.accentunder ? '1em' : '0.8em');
   }
 }

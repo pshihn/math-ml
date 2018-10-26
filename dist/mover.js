@@ -34,6 +34,7 @@ let MathOverElement = class MathOverElement extends MathMLElement {
         text-align: var(--math-over-align, center);
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
+        font-size: var(--math-over-font-size, 0.8em);
       }
     </style>
     <div class="vertical layout reverse">
@@ -54,6 +55,7 @@ let MathOverElement = class MathOverElement extends MathMLElement {
                 s.setProperty('--math-over-align', 'center');
                 break;
         }
+        s.setProperty('--math-over-font-size', this.accent ? '1em' : '0.8em');
     }
 };
 __decorate([

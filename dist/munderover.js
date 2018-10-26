@@ -28,17 +28,31 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
         -webkit-flex-direction: column-reverse;
         flex-direction: column-reverse;
       }
-      ::slotted(:not(:first-child)) {
+      .under {
         width: 100%;
         line-height: 1;
         margin: 0;
-        text-align: var(--math-over-align, center);
+        text-align: var(--math-underover-align, center);
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
+        font-size: var(--math-under-font-size, 0.75em);
+      }
+      .over {
+        width: 100%;
+        line-height: 1;
+        margin: 0;
+        text-align: var(--math-underover-align, center);
+        --math-style-displaystyle: false;
+        counter-increment: math-style-scriptlevel;
+        font-size: var(--math-over-font-size, 0.75em);
+      }
+      .base {
+        margin: 0;
       }
     </style>
-    <div class="vertical layout reverse">
-      <slot></slot>
+    <div id="muoPanel" class="vertical layout"></div>
+    <div style="display: hidden;">
+      <slot @slotchange="${this.refreshSlot}"></slot>
     </div>
     `;
     }
@@ -46,14 +60,43 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
         const s = this.style;
         switch (this.align) {
             case 'right':
-                s.setProperty('--math-over-align', 'right');
+                s.setProperty('--math-underover-align', 'right');
                 break;
             case 'left':
-                s.setProperty('--math-over-align', 'left');
+                s.setProperty('--math-underover-align', 'left');
                 break;
             default:
-                s.setProperty('--math-over-align', 'center');
+                s.setProperty('--math-underover-align', 'center');
                 break;
+        }
+        s.setProperty('--math-under-font-size', this.accentunder ? '1em' : '0.75em');
+        s.setProperty('--math-over-font-size', this.accent ? '1em' : '0.75em');
+        this.refreshSlot();
+    }
+    refreshSlot() {
+        if (!this.shadowRoot) {
+            return;
+        }
+        const slot = this.shadowRoot.querySelector('slot');
+        if (!slot) {
+            return;
+        }
+        const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
+        if (nodes.length) {
+            const panel = this.shadowRoot.querySelector('#muoPanel');
+            while (panel.firstChild) {
+                panel.removeChild(panel.firstChild);
+            }
+            if (nodes.length > 2) {
+                nodes[2].classList.add('over');
+                panel.appendChild(nodes[2]);
+            }
+            nodes[0].classList.add('base');
+            panel.append(nodes[0]);
+            if (nodes.length > 1) {
+                nodes[1].classList.add('under');
+                panel.appendChild(nodes[1]);
+            }
         }
     }
 };
