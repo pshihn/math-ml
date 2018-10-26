@@ -15,4 +15,5 @@ import './msup.js';
 import './msub.js';
 import './msubsup.js';
 import './mmultiscripts.js';
-import './mprescripts';
+import './mprescripts.js';
+import './none.js';
