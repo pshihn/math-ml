@@ -1,8 +1,4 @@
-import { MathMLElement, property } from './mathml-element.js';
-
-export declare type MathColumnAlignType = 'left' | 'center' | 'right';
-export declare type MathRowAlignType = 'axis' | 'baseline' | 'bottom' | 'center' | 'top';
-export declare type MathBorderType = 'none' | 'solid' | 'dashed';
+import { MathMLElement, property, MathRowAlignType } from './mathml-element.js';
 
 export class MathTableBaseElement extends MathMLElement {
   @property({ type: String }) columnalign?: string;

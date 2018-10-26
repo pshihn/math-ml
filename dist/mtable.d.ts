@@ -1,5 +1,5 @@
-import { TemplateResult } from './mathml-element.js';
-import { MathTableBaseElement, MathBorderType } from './mtable-base.js';
+import { TemplateResult, MathBorderType } from './mathml-element.js';
+import { MathTableBaseElement } from './mtable-base.js';
 export declare class MathTableElement extends MathTableBaseElement {
     columnlines?: MathBorderType;
     rowlines?: MathBorderType;

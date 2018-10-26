@@ -1,5 +1,5 @@
-import { html, TemplateResult, element, property } from './mathml-element.js';
-import { MathTableBaseElement, MathBorderType } from './mtable-base.js';
+import { html, TemplateResult, element, property, MathBorderType } from './mathml-element.js';
+import { MathTableBaseElement } from './mtable-base.js';
 
 @element('m-table')
 export class MathTableElement extends MathTableBaseElement {
