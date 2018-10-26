@@ -17,3 +17,6 @@ import './msubsup.js';
 import './mmultiscripts.js';
 import './mprescripts.js';
 import './none.js';
+import './mover.js';
+import './munder.js';
+import './munderover.js';
