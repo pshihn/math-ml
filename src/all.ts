@@ -21,3 +21,4 @@ import './mover.js';
 import './munder.js';
 import './munderover.js';
 import './msqrt.js';
+import './mroot.js';
