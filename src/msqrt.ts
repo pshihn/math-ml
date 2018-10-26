@@ -1,0 +1,69 @@
+import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
+import { HorizFlex } from './styles/common-styles.js';
+
+@element('m-sqrt')
+export class MathSqrtElement extends MathMLElement {
+  render(): TemplateResult {
+    return html`
+    <style>
+      ${HorizFlex}
+      :host {
+        display: inline-block;
+      }
+      .msqrtContent {
+        padding: 0 0.2em;
+        border-top: solid thin;
+      }
+      #msqrtGlyphSpan {
+        width: 1.1em;
+        position: relative;
+      }
+      svg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      path {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1;
+      }
+    </style>
+    <div class="horizontal layout">
+      <div id="msqrtGlyphSpan"><svg><path id="rootPath"></path></svg></div>
+      <div class="flex msqrtContent"><slot @slotchange="${this.onSlotCange}"></slot></div>
+    </div>
+    `;
+  }
+
+  updated() {
+    this.onSlotCange();
+  }
+
+  private onSlotCange() {
+    if (!this.shadowRoot) {
+      return;
+    }
+    const slot = this.shadowRoot!.querySelector('slot') as HTMLSlotElement;
+    if (!slot) {
+      return;
+    }
+    setTimeout(() => {
+      this.drawRoot();
+    }, 10);
+  }
+
+  private drawRoot() {
+    const span = this.shadowRoot!.querySelector('#msqrtGlyphSpan');
+    const path = this.shadowRoot!.querySelector('#rootPath');
+    if (span && path) {
+      const size = (span as HTMLElement).getBoundingClientRect();
+      const width = size.width;
+      const height = size.height;
+      const d = `M0 ${height * 0.55} H${width * 0.13} L${width * 0.45} ${height - 2} L${width} 0`;
+      path.setAttribute('d', d);
+    }
+  }
+}
