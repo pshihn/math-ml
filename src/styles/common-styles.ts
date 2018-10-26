@@ -32,6 +32,13 @@ const center = `.center {
   align-items: center;
 }`;
 
+export const AllFlex: TemplateResult = html`
+  ${vertical}
+  ${horizontal}
+  ${flex}
+  ${center}
+`;
+
 export const VertFlex: TemplateResult = html`
   ${vertical}
   ${flex}

@@ -14,3 +14,5 @@ import './mtable.js';
 import './msup.js';
 import './msub.js';
 import './msubsup.js';
+import './mmultiscripts.js';
+import './mprescripts';

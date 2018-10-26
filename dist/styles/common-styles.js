@@ -27,6 +27,12 @@ const center = `.center {
   -webkit-align-items: center;
   align-items: center;
 }`;
+export const AllFlex = html `
+  ${vertical}
+  ${horizontal}
+  ${flex}
+  ${center}
+`;
 export const VertFlex = html `
   ${vertical}
   ${flex}
