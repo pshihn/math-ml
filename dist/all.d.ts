@@ -22,3 +22,4 @@ import './munder.js';
 import './munderover.js';
 import './msqrt.js';
 import './mroot.js';
+import './mfrac.js';
