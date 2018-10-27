@@ -26,3 +26,5 @@ import './mfrac.js';
 import './menclose.js';
 import './mphantom.js';
 import './merror.js';
+import './mfenced.js';
+import './m-stretchy-y.js';

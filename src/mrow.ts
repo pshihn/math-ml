@@ -19,6 +19,9 @@ export class MathRowElement extends MathMLElement {
         direction: inherit;
         unicode-bidi: inherit;
       }
+      .layout.horizontal.center {
+        align-items: stretch;
+      }
     </style>
     <div class="horizontal layout center"><slot></slot></div>
     `;
