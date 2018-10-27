@@ -23,3 +23,4 @@ import './munderover.js';
 import './msqrt.js';
 import './mroot.js';
 import './mfrac.js';
+import './menclose.js';
