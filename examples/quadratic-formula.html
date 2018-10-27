@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+  <title>Math-ML: Deriving the Quadratic Formula</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 25px 16px;
+    }
+
+    h1 {
+      font-weight: 300;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 10px;
+      margin: 0;
+    }
+
+    math-ml {
+      margin: 0 10px;
+    }
+
+    a {
+      color: darkcyan;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+  <script async src="../dist/mathml.min.js"></script>
+</head>
+
+<body>
+  <article>
+    <h1><a href="https://github.com/pshihn/math-ml" rel="noopener">Math-ML</a>: Deriving the Quadratic Formula</h1>
+    <p><span class="seoSummary">This page outlines the derivation of the Quadratic Formula.</span></p>
+    <p>
+      <math-ml>
+        <m-table columnalign="left">
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-row>
+                    <m-row>We take a quadratic equation in its general form, and solve for x:<m-space width="2.5ex"
+                        depth="1ex" height="0.5ex"></m-space>
+                    </m-row>
+                  </m-row>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+        </m-table>
+      </math-ml>
+    </p>
+
+    <p>
+      <math-ml>
+        <m-table columnalign="left">
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-row>
+                    <m-row>
+                      <m-i>a</m-i>
+                      <m-o>⁢</m-o>
+                      <m-sup>
+                        <m-i>x</m-i>
+                        <m-n>2</m-n>
+                      </m-sup>
+                    </m-row>
+                    <m-o> + </m-o>
+                    <m-i>b</m-i>
+                    <m-o>⁢</m-o>
+                    <m-i>x</m-i>
+                  </m-row>
+                  <m-o> + </m-o>
+                  <m-i>c</m-i>
+                </m-row>
+                <m-o>=</m-o>
+                <m-n>0</m-n>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-i>a</m-i>
+                  <m-o>⁢</m-o>
+                  <m-sup>
+                    <m-i>x</m-i>
+                    <m-n>2</m-n>
+                  </m-sup>
+                </m-row>
+                <m-o> + </m-o>
+                <m-i>b</m-i>
+                <m-o>⁢</m-o>
+                <m-i>x</m-i>
+                <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+              </m-row>
+              <m-o>=</m-o>
+              <m-o>-</m-o>
+              <m-i> c</m-i>
+              <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-sup>
+                    <m-i>x</m-i>
+                    <m-n>2</m-n>
+                  </m-sup>
+                </m-row>
+                <m-o> + </m-o>
+                <m-frac>
+                  <m-row>
+                    <m-i>b</m-i>
+                  </m-row>
+                  <m-i>a</m-i>
+                </m-frac>
+                <m-o>⁤</m-o>
+                <m-i>x</m-i>
+              </m-row>
+              <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+              <m-o>=</m-o>
+              <m-frac>
+                <m-row>
+                  <m-o>-</m-o>
+                  <m-i>c</m-i>
+                </m-row>
+                <m-i>a</m-i>
+              </m-frac>
+              <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+              <m-row>
+                <m-text mathcolor="red" mathsize="10pt">Divide out leading coefficient.</m-text>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-row>
+                    <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                    <m-sup>
+                      <m-i>x</m-i>
+                      <m-n>2</m-n>
+                    </m-sup>
+                  </m-row>
+                  <m-o> + </m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-i>b</m-i>
+                    </m-row>
+                    <m-i>a</m-i>
+                  </m-frac>
+                  <m-o>⁤</m-o>
+                  <m-i>x</m-i>
+                  <m-o> + </m-o>
+                  <m-sup>
+                    <m-fenced>
+                      <m-frac>
+                        <m-row>
+                          <m-i>b</m-i>
+                        </m-row>
+                        <m-row>
+                          <m-n>2</m-n>
+                          <m-i>a</m-i>
+                        </m-row>
+                      </m-frac>
+                    </m-fenced>
+                    <m-n>2</m-n>
+                  </m-sup>
+                </m-row>
+                <m-o>=</m-o>
+                <m-frac>
+                  <m-row>
+                    <m-o>-</m-o>
+                    <m-i>c</m-i>
+                    <m-o>(</m-o>
+                    <m-n>4</m-n>
+                    <m-i>a</m-i>
+                    <m-o>)</m-o>
+                  </m-row>
+                  <m-row>
+                    <m-i>a</m-i>
+                    <m-o>(</m-o>
+                    <m-n>4</m-n>
+                    <m-i>a</m-i>
+                    <m-o>)</m-o>
+                  </m-row>
+                </m-frac>
+              </m-row>
+              <m-o> + </m-o>
+              <m-frac>
+                <m-row>
+                  <m-sup>
+                    <m-i>b</m-i>
+                    <m-n>2</m-n>
+                  </m-sup>
+                </m-row>
+                <m-row>
+                  <m-n>4</m-n>
+                  <m-sup>
+                    <m-i>a</m-i>
+                    <m-n>2</m-n>
+                  </m-sup>
+                </m-row>
+              </m-frac>
+              <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+              <m-row>
+                <m-text mathcolor="red" mathsize="10pt">Complete the square.</m-text>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-o>(</m-o>
+                  <m-i>x</m-i>
+                  <m-o> + </m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-i>b</m-i>
+                    </m-row>
+                    <m-row>
+                      <m-n>2</m-n>
+                      <m-i>a</m-i>
+                    </m-row>
+                  </m-frac>
+                  <m-o>)</m-o>
+                  <m-o>(</m-o>
+                  <m-i>x</m-i>
+                  <m-o> + </m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-i>b</m-i>
+                    </m-row>
+                    <m-row>
+                      <m-n>2</m-n>
+                      <m-i>a</m-i>
+                    </m-row>
+                  </m-frac>
+                  <m-o>)</m-o>
+                  <m-o>=</m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-sup>
+                        <m-i>b</m-i>
+                        <m-n>2</m-n>
+                      </m-sup>
+                      <m-o> - </m-o>
+                      <m-n>4</m-n>
+                      <m-i>a</m-i>
+                      <m-i>c</m-i>
+                    </m-row>
+                    <m-row>
+                      <m-n>4</m-n>
+                      <m-sup>
+                        <m-i>a</m-i>
+                        <m-n>2</m-n>
+                      </m-sup>
+                    </m-row>
+                  </m-frac>
+                </m-row>
+                <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+                <m-row>
+                  <m-text mathcolor="red" mathsize="10pt">Discriminant revealed.</m-text>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-sup>
+                    <m-row>
+                      <m-o>(</m-o>
+                      <m-i>x</m-i>
+                      <m-o> + </m-o>
+                      <m-frac>
+                        <m-row>
+                          <m-i>b</m-i>
+                        </m-row>
+                        <m-row>
+                          <m-n>2</m-n>
+                          <m-i>a</m-i>
+                        </m-row>
+                      </m-frac>
+                      <m-o>)</m-o>
+                    </m-row>
+                    <m-n>2</m-n>
+                  </m-sup>
+                  <m-o>=</m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-sup>
+                        <m-i>b</m-i>
+                        <m-n>2</m-n>
+                      </m-sup>
+                      <m-o> - </m-o>
+                      <m-n>4</m-n>
+                      <m-i>a</m-i>
+                      <m-i>c</m-i>
+                    </m-row>
+                    <m-row>
+                      <m-n>4</m-n>
+                      <m-sup>
+                        <m-i>a</m-i>
+                        <m-n>2</m-n>
+                      </m-sup>
+                    </m-row>
+                  </m-frac>
+                </m-row>
+                <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+                <m-row>
+                  <m-text mathcolor="red" mathsize="10pt"></m-text>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-row>
+                    <m-i>x</m-i>
+                    <m-o> + </m-o>
+                    <m-frac>
+                      <m-row>
+                        <m-i>b</m-i>
+                      </m-row>
+                      <m-row>
+                        <m-n>2</m-n>
+                        <m-i>a</m-i>
+                      </m-row>
+                    </m-frac>
+                  </m-row>
+                  <m-o>=</m-o>
+                  <m-sqrt>
+                    <m-frac>
+                      <m-row>
+                        <m-sup>
+                          <m-i>b</m-i>
+                          <m-n>2</m-n>
+                        </m-sup>
+                        <m-o> - </m-o>
+                        <m-n>4</m-n>
+                        <m-i>a</m-i>
+                        <m-i>c</m-i>
+                      </m-row>
+                      <m-row>
+                        <m-n>4</m-n>
+                        <m-sup>
+                          <m-i>a</m-i>
+                          <m-n>2</m-n>
+                        </m-sup>
+                      </m-row>
+                    </m-frac>
+                  </m-sqrt>
+                </m-row>
+                <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+                <m-row>
+                  <m-text mathcolor="red" mathsize="10pt"></m-text>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-row>
+                    <m-i>x</m-i>
+                  </m-row>
+                  <m-o>=</m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-o>-</m-o>
+                      <m-i>b</m-i>
+                    </m-row>
+                    <m-row>
+                      <m-n>2</m-n>
+                      <m-i>a</m-i>
+                    </m-row>
+                  </m-frac>
+                  <m-o>±</m-o>
+                  <m-row>
+                    <m-o>{</m-o>
+                    <m-i>C</m-i>
+                    <m-o>}</m-o>
+                  </m-row>
+                  <m-sqrt>
+                    <m-frac>
+                      <m-row>
+                        <m-sup>
+                          <m-i>b</m-i>
+                          <m-n>2</m-n>
+                        </m-sup>
+                        <m-o> - </m-o>
+                        <m-n>4</m-n>
+                        <m-i>a</m-i>
+                        <m-i>c</m-i>
+                      </m-row>
+                      <m-row>
+                        <m-n>4</m-n>
+                        <m-sup>
+                          <m-i>a</m-i>
+                          <m-n>2</m-n>
+                        </m-sup>
+                      </m-row>
+                    </m-frac>
+                  </m-sqrt>
+                </m-row>
+                <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+                <m-row>
+                  <m-text mathcolor="red" mathsize="10pt">There's the vertex formula.</m-text>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-row>
+                <m-row>
+                  <m-space width="2.5ex" depth="1ex" height="0.5ex"></m-space>
+                  <m-row>
+                    <m-i>x</m-i>
+                  </m-row>
+                  <m-o>=</m-o>
+                  <m-frac>
+                    <m-row>
+                      <m-o>-</m-o>
+                      <m-i> b</m-i>
+                      <m-o>±</m-o>
+                      <m-row>
+                        <m-o>{</m-o>
+                        <m-i>C</m-i>
+                        <m-o>}</m-o>
+                      </m-row>
+                      <m-sqrt>
+                        <m-sup>
+                          <m-i>b</m-i>
+                          <m-n>2</m-n>
+                        </m-sup>
+                        <m-o> - </m-o>
+                        <m-n>4</m-n>
+                        <m-i>a</m-i>
+                        <m-i>c</m-i>
+                      </m-sqrt>
+                    </m-row>
+                    <m-row>
+                      <m-n>2</m-n>
+                      <m-i>a</m-i>
+                    </m-row>
+                  </m-frac>
+                </m-row>
+                <m-space width="2ex" depth="1ex" height="0.5ex"></m-space>
+                <m-row>
+                  <m-text mathcolor="red" mathsize="10pt"></m-text>
+                </m-row>
+              </m-row>
+            </m-td>
+          </m-tr>
+        </m-table>
+      </math-ml>
+    </p>
+
+
+
+  </article>
+</body>
+
+</html>

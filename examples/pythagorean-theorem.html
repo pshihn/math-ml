@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+  <title>Math-ML: Proving the Pythagorean theorem</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 25px 16px;
+    }
+
+    h1 {
+      font-weight: 300;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 10px;
+      margin: 0;
+    }
+
+    math-ml {
+      margin: 0 10px;
+    }
+
+    a {
+      color: darkcyan;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+  <script async src="../dist/mathml.min.js"></script>
+</head>
+
+<body>
+  <article>
+    <h1><a href="https://github.com/pshihn/math-ml" rel="noopener">Math-ML</a>: Proving the Pythagorean theorem</h1>
+    <p>We will now prove the Pythogorian theorem:</p>
+
+    <p><strong>Statement</strong>: In a right angled triangle, the square of the hypotenuse is equal to the sum of the
+      squares of the other two sides.</p>
+
+    <p>i.e, If a and b are the legs and c is the hypotenuse then<math-ml>
+        <m-row>
+          <m-sup>
+            <m-i> a </m-i>
+            <m-n>2</m-n>
+          </m-sup>
+          <m-o> + </m-o>
+          <m-sup>
+            <m-i> b </m-i>
+            <m-n>2</m-n>
+          </m-sup>
+          <m-o> = </m-o>
+          <m-sup>
+            <m-i> c </m-i>
+            <m-n>2</m-n>
+          </m-sup>
+        </m-row>
+      </math-ml>.</p>
+    <p><strong>Proof:</strong> We can prove the theorem algebraically by showing that the area of the big square
+      equals the area of the inner square (hypotenuse squared) plus the area of the four triangles:
+
+      <math-ml style="display: block; margin: 10px;">
+        <m-table columnalign="right center left">
+          <m-tr>
+            <m-td>
+              <m-sup>
+                <m-row>
+                  <m-o> ( </m-o>
+                  <m-i> a </m-i>
+                  <m-o> + </m-o>
+                  <m-i> b </m-i>
+                  <m-o> ) </m-o>
+                </m-row>
+                <m-n> 2 </m-n>
+              </m-sup>
+            </m-td>
+            <m-td>
+              <m-o> = </m-o>
+            </m-td>
+            <m-td>
+              <m-sup>
+                <m-i> c </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+              <m-o> + </m-o>
+              <m-n> 4 </m-n>
+              <m-o> ⋅ </m-o>
+              <m-o>(</m-o>
+              <m-frac>
+                <m-n> 1 </m-n>
+                <m-n> 2 </m-n>
+              </m-frac>
+              <m-i> a </m-i>
+              <m-i> b </m-i>
+              <m-o>)</m-o>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-sup>
+                <m-i> a </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+              <m-o> + </m-o>
+              <m-n> 2 </m-n>
+              <m-i> a </m-i>
+              <m-i> b </m-i>
+              <m-o> + </m-o>
+              <m-sup>
+                <m-i> b </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+            </m-td>
+            <m-td>
+              <m-o> = </m-o>
+            </m-td>
+            <m-td>
+              <m-sup>
+                <m-i> c </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+              <m-o> + </m-o>
+              <m-n> 2 </m-n>
+              <m-i> a </m-i>
+              <m-i> b</m-i>
+            </m-td>
+          </m-tr>
+          <m-tr>
+            <m-td></m-td>
+          </m-tr>
+          <m-tr>
+            <m-td>
+              <m-sup>
+                <m-i>a </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+              <m-o> + </m-o>
+              <m-sup>
+                <m-i> b </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+            </m-td>
+            <m-td>
+              <m-o> = </m-o>
+            </m-td>
+            <m-td>
+              <m-sup>
+                <m-i> c </m-i>
+                <m-n>2</m-n>
+              </m-sup>
+            </m-td>
+          </m-tr>
+        </m-table>
+      </math-ml>
+    </p>
+  </article>
+</body>
+
+</html>
