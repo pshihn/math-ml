@@ -27,6 +27,7 @@ export class MathUnderOverElement extends MathMLElement {
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.75em);
+        --math-style-stretchy: true;
       }
       .over {
         width: 100%;
@@ -36,6 +37,7 @@ export class MathUnderOverElement extends MathMLElement {
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-over-font-size, 0.75em);
+        --math-style-stretchy: true;
       }
       .base {
         margin: 0;

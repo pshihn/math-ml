@@ -8,42 +8,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { MathMLElement, html, element, property } from './mathml-element.js';
-// TODO: check for suffix positioning
-// if it is the only element in an implicit or explicit mrow and if it is in a script position of
-// one of the elements listed in Section 3.4 Script and Limit Schemata, the postfix form is used;
-// TODO: Accent
-// Specifies whether this operator should be treated as an accent (diacritical mark) when used as an underscript or overscript; see munder, mover and munderover.
-// TODO: Lspace/Rspace as style?
-// TODO: whole lota stuff related to stretchy
 let MathOElement = class MathOElement extends MathMLElement {
-    // TODO: check for suffix positioning
-    // if it is the only element in an implicit or explicit mrow and if it is in a script position of
-    // one of the elements listed in Section 3.4 Script and Limit Schemata, the postfix form is used;
-    // TODO: Accent
-    // Specifies whether this operator should be treated as an accent (diacritical mark) when used as an underscript or overscript; see munder, mover and munderover.
-    // TODO: Lspace/Rspace as style?
-    // TODO: whole lota stuff related to stretchy
     constructor() {
         super(...arguments);
         this.formStyle = '';
-        this.fence = false;
-        this.accent = false;
-        this.largeop = false;
     }
     render() {
         return html `
     <style>
       :host {
-        display: inline-block;
-        font-size: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        line-height: inherit;
-        word-spacing: inherit;
-        letter-spacing: inherit;
-        text-rendering: inherit;
-        direction: inherit;
-        unicode-bidi: inherit;
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        position: relative;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
@@ -54,14 +37,24 @@ let MathOElement = class MathOElement extends MathMLElement {
       :host(.mo-product) {
         margin: 0;
       }
-      :host([largeop]) {
-        font-size: var(--int-math-ml-largeop-size, inherit);
+      .invisible {
+        opacity: 0;
       }
     </style>
-    <slot></slot>
+    <span class="invisible"><slot @slotchange="${this.onSlotChange}"></slot></span>
     `;
     }
     updated() {
+        this.onSlotChange();
+    }
+    onSlotChange() {
+        if (!this.shadowRoot) {
+            return;
+        }
+        const span = this.shadowRoot.querySelector('span');
+        if (!span) {
+            return;
+        }
         let specialRule = '';
         let effectiveForm = this.form;
         if (!effectiveForm) {
@@ -96,6 +89,41 @@ let MathOElement = class MathOElement extends MathMLElement {
             this.formStyle = `mo-${newFormStyle}`;
             this.classList.add(this.formStyle);
         }
+        let effectiveStretch = this.stretchy;
+        if (effectiveStretch === undefined) {
+            if (getComputedStyle(this).getPropertyValue('--math-style-stretchy').trim() === 'true') {
+                effectiveStretch = true;
+            }
+            else {
+                effectiveStretch = effectiveForm === 'prefix' || effectiveForm === 'postfix';
+            }
+        }
+        span.style.width = null;
+        if (!effectiveStretch) {
+            span.style.transform = null;
+            span.style.lineHeight = null;
+            span.classList.remove('invisible');
+        }
+        else {
+            span.style.lineHeight = '1';
+            setTimeout(() => {
+                if (span.style.transform) {
+                    return;
+                }
+                span.classList.remove('invisible');
+                const spanSize = span.getBoundingClientRect();
+                const size = this.getBoundingClientRect();
+                const scaleY = spanSize.height ? (size.height / spanSize.height) : 1;
+                const scaleX = spanSize.width ? (size.width / spanSize.width) : 1;
+                if (scaleY <= 1) {
+                    span.style.lineHeight = null;
+                }
+                if (scaleX !== 1) {
+                    span.style.width = '100%';
+                }
+                span.style.transform = `scale(${scaleX}, ${scaleY})`;
+            }, 50);
+        }
     }
 };
 __decorate([
@@ -103,17 +131,9 @@ __decorate([
     __metadata("design:type", String)
 ], MathOElement.prototype, "form", void 0);
 __decorate([
-    property({ type: Boolean, reflect: true }),
-    __metadata("design:type", Object)
-], MathOElement.prototype, "fence", void 0);
-__decorate([
-    property({ type: Boolean, reflect: true }),
-    __metadata("design:type", Object)
-], MathOElement.prototype, "accent", void 0);
-__decorate([
-    property({ type: Boolean, reflect: true }),
-    __metadata("design:type", Object)
-], MathOElement.prototype, "largeop", void 0);
+    property({ type: Boolean }),
+    __metadata("design:type", Boolean)
+], MathOElement.prototype, "stretchy", void 0);
 MathOElement = __decorate([
     element('m-o')
 ], MathOElement);

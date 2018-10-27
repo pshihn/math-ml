@@ -21,6 +21,7 @@ export class MathUnderElement extends MathMLElement {
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.8em);
+        --math-style-stretchy: true;
       }
     </style>
     <div class="vertical layout">

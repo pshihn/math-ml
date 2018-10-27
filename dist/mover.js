@@ -35,6 +35,7 @@ let MathOverElement = class MathOverElement extends MathMLElement {
         --math-style-displaystyle: false;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-over-font-size, 0.8em);
+        --math-style-stretchy: true;
       }
     </style>
     <div class="vertical layout reverse">
