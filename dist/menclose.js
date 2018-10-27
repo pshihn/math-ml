@@ -38,7 +38,7 @@ let MathEncloseElement = class MathEncloseElement extends MathMLElement {
     `;
     }
     updated() {
-        this.refresh;
+        this.refresh();
     }
     refresh() {
         if (!this.shadowRoot) {

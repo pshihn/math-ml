@@ -31,7 +31,7 @@ export class MathEncloseElement extends MathMLElement {
   }
 
   updated() {
-    this.refresh;
+    this.refresh();
   }
 
   private refresh() {
