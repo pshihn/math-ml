@@ -12,7 +12,7 @@ Math-ML is implemented using custom elements. There's a corresponding element fo
 
 This is available as a polyfill as well. If MathML is not detected on the browser (every browser except Firefox), the polyfill replaces all `<math>` nodes with corresponding `<math-ml>` nodes. 
 
-## Exampples
+## Examples
 
 This is still a work in progress, but here's a basic example:
 
