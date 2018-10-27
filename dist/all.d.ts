@@ -25,3 +25,4 @@ import './mroot.js';
 import './mfrac.js';
 import './menclose.js';
 import './mphantom.js';
+import './merror.js';
