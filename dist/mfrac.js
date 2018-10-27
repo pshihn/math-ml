@@ -16,6 +16,12 @@ let MathFracElement = class MathFracElement extends MathMLElement {
         this.denomalign = 'center';
     }
     render() {
+        let bevelledDivStyle = 'stroke-width: 1;';
+        let unbevelledDivStyle = 'border-top: solid thin;';
+        if (this.linethickness && (this.linethickness.trim().charAt(0) === '0')) {
+            bevelledDivStyle = 'stroke-width: 0;';
+            unbevelledDivStyle = '';
+        }
         return html `
     <style>
       :host {
@@ -59,7 +65,6 @@ let MathFracElement = class MathFracElement extends MathMLElement {
       #unbevelledDivider {
         width: 100%;
         height: 0;
-        border-top: solid thin;
       }
       .hidden {
         display: none !important;
@@ -74,13 +79,12 @@ let MathFracElement = class MathFracElement extends MathMLElement {
       path {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1;
       }
     </style>
     <div id="mfracPanel">
       <div id="mfracN"></div>
-      <div id="bevelledDivider" class="hidden">&nbsp;<svg><path id="bevelledPath"></path></svg></div>
-      <div id="unbevelledDivider"></div>
+      <div id="bevelledDivider" class="hidden">&nbsp;<svg><path id="bevelledPath" style="${bevelledDivStyle}"></path></svg></div>
+      <div id="unbevelledDivider" style="${unbevelledDivStyle}"></div>
       <div id="mfracD"></div>
     </div>
     <div style="display: hidden;"><slot @slotchange="${this.refreshSlot}"></slot></div>
@@ -159,6 +163,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", String)
 ], MathFracElement.prototype, "denomalign", void 0);
+__decorate([
+    property({ type: String }),
+    __metadata("design:type", String)
+], MathFracElement.prototype, "linethickness", void 0);
 MathFracElement = __decorate([
     element('m-frac')
 ], MathFracElement);

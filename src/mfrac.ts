@@ -5,8 +5,15 @@ export class MathFracElement extends MathMLElement {
   @property({ type: Boolean }) bevelled = false;
   @property({ type: String }) numalign: MathAlignType = 'center';
   @property({ type: String }) denomalign: MathAlignType = 'center';
+  @property({ type: String }) linethickness?: string;
 
   render(): TemplateResult {
+    let bevelledDivStyle = 'stroke-width: 1;';
+    let unbevelledDivStyle = 'border-top: solid thin;';
+    if (this.linethickness && (this.linethickness.trim().charAt(0) === '0')) {
+      bevelledDivStyle = 'stroke-width: 0;';
+      unbevelledDivStyle = '';
+    }
     return html`
     <style>
       :host {
@@ -50,7 +57,6 @@ export class MathFracElement extends MathMLElement {
       #unbevelledDivider {
         width: 100%;
         height: 0;
-        border-top: solid thin;
       }
       .hidden {
         display: none !important;
@@ -65,13 +71,12 @@ export class MathFracElement extends MathMLElement {
       path {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1;
       }
     </style>
     <div id="mfracPanel">
       <div id="mfracN"></div>
-      <div id="bevelledDivider" class="hidden">&nbsp;<svg><path id="bevelledPath"></path></svg></div>
-      <div id="unbevelledDivider"></div>
+      <div id="bevelledDivider" class="hidden">&nbsp;<svg><path id="bevelledPath" style="${bevelledDivStyle}"></path></svg></div>
+      <div id="unbevelledDivider" style="${unbevelledDivStyle}"></div>
       <div id="mfracD"></div>
     </div>
     <div style="display: hidden;"><slot @slotchange="${this.refreshSlot}"></slot></div>
