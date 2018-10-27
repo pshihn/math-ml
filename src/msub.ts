@@ -9,15 +9,6 @@ export class MathSubElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
-        font-size: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        line-height: inherit;
-        word-spacing: inherit;
-        letter-spacing: inherit;
-        text-rendering: inherit;
-        direction: inherit;
-        unicode-bidi: inherit;
       }
       ::slotted(:first-child) {
         padding-bottom: 0.16em;

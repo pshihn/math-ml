@@ -9,15 +9,6 @@ export class MathRowElement extends MathMLElement {
       ${HorizCenterFlex}
       :host {
         display: inline-block;
-        font-size: inherit;
-        font-style: inherit;
-        font-family: inherit;
-        line-height: inherit;
-        word-spacing: inherit;
-        letter-spacing: inherit;
-        text-rendering: inherit;
-        direction: inherit;
-        unicode-bidi: inherit;
       }
       .layout.horizontal.center {
         align-items: stretch;
