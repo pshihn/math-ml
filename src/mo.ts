@@ -52,6 +52,11 @@ export class MathOElement extends MathMLElement {
       .invisible {
         opacity: 0;
       }
+      .fullWidthSpan {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
     </style>
     <span class="invisible"><slot @slotchange="${this.onSlotChange}"></slot></span>
     `;
@@ -109,11 +114,13 @@ export class MathOElement extends MathMLElement {
     }
     span.style.width = null;
     if (!effectiveStretch) {
+      span.classList.add('fullWidthSpan');
       this.classList.remove('mo-stretchy');
       span.style.transform = null;
       span.style.lineHeight = null;
       span.classList.remove('invisible');
     } else {
+      span.classList.remove('fullWidthSpan');
       this.classList.add('mo-stretchy');
       span.style.lineHeight = '1';
       setTimeout(() => {
