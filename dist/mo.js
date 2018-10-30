@@ -49,6 +49,10 @@ let MathOElement = class MathOElement extends MathMLElement {
         align-self: stretch;
         margin: 0 0.2em 0 0.05em;
       }
+      :host(.mo-neut-brace) {
+        align-self: stretch;
+        margin: 0 0.16em;
+      }
       :host(.mo-stretchy) {
         align-self: stretch;
       }
@@ -84,6 +88,9 @@ let MathOElement = class MathOElement extends MathMLElement {
         else if (text.match(/^[\]})]*$/)) {
             specialRule = 'end-brace';
         }
+        else if (text.match(/^[|]*$/)) {
+            specialRule = 'neut-brace';
+        }
         const newFormStyle = specialRule || 'infix';
         if (this.formStyle !== newFormStyle) {
             if (this.formStyle) {
@@ -98,7 +105,7 @@ let MathOElement = class MathOElement extends MathMLElement {
                 effectiveStretch = true;
             }
             else {
-                effectiveStretch = specialRule === 'begin-brace' || specialRule === 'end-brace';
+                effectiveStretch = specialRule === 'begin-brace' || specialRule === 'end-brace' || specialRule === 'neut-brace';
             }
         }
         span.style.width = null;
