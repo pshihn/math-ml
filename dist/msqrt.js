@@ -19,6 +19,7 @@ let MathSqrtElement = class MathSqrtElement extends MathMLElement {
       .msqrtContent {
         padding: 1px 0.05em 0 0.2em;
         border-top: solid thin;
+        white-space: nowrap;
       }
       #msqrtGlyphSpan {
         width: 1.1em;
