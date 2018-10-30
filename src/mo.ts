@@ -23,6 +23,7 @@ export class MathOElement extends MathMLElement {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        align-self: stretch;
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
