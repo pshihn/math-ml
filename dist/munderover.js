@@ -33,7 +33,7 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
         line-height: 1;
         margin: 0;
         text-align: var(--math-underover-align, center);
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.75em);
         --math-style-stretchy: true;
@@ -43,7 +43,7 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
         line-height: 1;
         margin: 0;
         text-align: var(--math-underover-align, center);
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-over-font-size, 0.75em);
         --math-style-stretchy: true;

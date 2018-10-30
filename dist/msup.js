@@ -20,7 +20,7 @@ let MathSupElement = class MathSupElement extends MathMLElement {
       }
       ::slotted(:not(:first-child)) {
         font-size: 0.8em;
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
       }
     </style>

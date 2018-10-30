@@ -49,6 +49,10 @@ let MathOElement = class MathOElement extends MathMLElement {
       :host(.mo-stretchy) {
         align-self: stretch;
       }
+      :host(.mo-bigger) {
+        line-height: 1.1;
+        font-size: 1.8em;
+      }
       .invisible {
         opacity: 0;
       }
@@ -83,6 +87,13 @@ let MathOElement = class MathOElement extends MathMLElement {
         }
         else if (text.match(/^[|]*$/)) {
             specialRule = 'neut-brace';
+        }
+        // bigger text for math ops
+        this.classList.remove('mo-bigger');
+        if (text && (0x2200 <= text.charCodeAt(0)) && (text.charCodeAt(0) <= 0x2233)) {
+            if ((getComputedStyle(this).getPropertyValue('--math-style-level') || '').trim() !== 'sub') {
+                this.classList.add('mo-bigger');
+            }
         }
         const newFormStyle = specialRule || 'infix';
         if (this.formStyle !== newFormStyle) {

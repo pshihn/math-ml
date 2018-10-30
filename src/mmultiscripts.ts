@@ -12,13 +12,13 @@ export class MathMultiScriptsElement extends MathMLElement {
       }
       .sup {
         font-size: 0.75em;
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
       }
       .sub {
         font-size: 0.75em;
         align-self: flex-end;
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
       }
       #cScriptPanel * {
