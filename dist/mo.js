@@ -49,6 +49,9 @@ let MathOElement = class MathOElement extends MathMLElement {
         align-self: stretch;
         margin: 0 0.2em 0 0.05em;
       }
+      :host(.mo-stretchy) {
+        align-self: stretch;
+      }
       .invisible {
         opacity: 0;
       }
@@ -68,37 +71,20 @@ let MathOElement = class MathOElement extends MathMLElement {
             return;
         }
         let specialRule = '';
-        let effectiveForm = this.form;
-        if (!effectiveForm) {
-            const parent = this.parentElement;
-            // if (parent && (parent.tagName === 'M-ROW' || parent.tagName === 'MROW')) {
-            if (parent) {
-                const children = parent.children;
-                if (children.length > 1) {
-                    if (children[0] === this) {
-                        effectiveForm = 'prefix';
-                    }
-                    else if (children[children.length - 1] === this) {
-                        effectiveForm = 'postfix';
-                    }
-                }
-            }
-            const text = (this.textContent || '').trim();
-            if (text === ',' || text === ';') {
-                specialRule = 'separator';
-            }
-            else if (text === '.' || text === '⋅') {
-                specialRule = 'product';
-            }
-            else if (text.match(/^[\[{(]*$/)) {
-                specialRule = 'begin-brace';
-            }
-            else if (text.match(/^[\]})]*$/)) {
-                specialRule = 'end-brace';
-            }
+        const text = (this.textContent || '').trim();
+        if (text === ',' || text === ';') {
+            specialRule = 'separator';
         }
-        effectiveForm = effectiveForm || 'infix';
-        const newFormStyle = specialRule || effectiveForm;
+        else if (text === '.' || text === '⋅') {
+            specialRule = 'product';
+        }
+        else if (text.match(/^[\[{(]*$/)) {
+            specialRule = 'begin-brace';
+        }
+        else if (text.match(/^[\]})]*$/)) {
+            specialRule = 'end-brace';
+        }
+        const newFormStyle = specialRule || 'infix';
         if (this.formStyle !== newFormStyle) {
             if (this.formStyle) {
                 this.classList.remove(this.formStyle);
@@ -112,16 +98,18 @@ let MathOElement = class MathOElement extends MathMLElement {
                 effectiveStretch = true;
             }
             else {
-                effectiveStretch = effectiveForm === 'prefix' || effectiveForm === 'postfix' || specialRule === 'begin-brace' || specialRule === 'end-brace';
+                effectiveStretch = specialRule === 'begin-brace' || specialRule === 'end-brace';
             }
         }
         span.style.width = null;
         if (!effectiveStretch) {
+            this.classList.remove('mo-stretchy');
             span.style.transform = null;
             span.style.lineHeight = null;
             span.classList.remove('invisible');
         }
         else {
+            this.classList.add('mo-stretchy');
             span.style.lineHeight = '1';
             setTimeout(() => {
                 if (span.style.transform) {
