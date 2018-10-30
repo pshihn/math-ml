@@ -17,9 +17,31 @@ let MathRowElement = class MathRowElement extends MathMLElement {
       .layout.horizontal {
         align-items: baseline;
       }
+      .layout.horizontal.centered {
+        align-items: center;
+      }
     </style>
-    <div class="horizontal layout"><slot></slot></div>
+    <div id="mrowPanel" class="horizontal layout"><slot @slotchange="${this.onSlotChange}"></slot></div>
     `;
+    }
+    onSlotChange() {
+        if (!this.shadowRoot) {
+            return;
+        }
+        const slot = this.shadowRoot.querySelector('slot');
+        const panel = this.shadowRoot.querySelector('#mrowPanel');
+        if (!slot || !panel) {
+            return;
+        }
+        panel.classList.remove('centered');
+        const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
+        for (let i = 0; i < nodes.length; i++) {
+            const text = (nodes[i].textContent || '').trim();
+            if (text === '=') {
+                panel.classList.add('centered');
+                break;
+            }
+        }
     }
 };
 MathRowElement = __decorate([
