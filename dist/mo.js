@@ -31,26 +31,20 @@ let MathOElement = class MathOElement extends MathMLElement {
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
-        align-self: baseline;
       }
       :host(.mo-separator) {
         margin: 0 0.2em 0 0;
-        align-self: baseline;
       }
       :host(.mo-product) {
         margin: 0;
-        align-self: baseline;
       }
       :host(.mo-begin-brace) {
-        align-self: stretch;
         margin: 0 0.05em 0 0.2em;
       }
       :host(.mo-end-brace) {
-        align-self: stretch;
         margin: 0 0.2em 0 0.05em;
       }
       :host(.mo-neut-brace) {
-        align-self: stretch;
         margin: 0 0.16em;
       }
       :host(.mo-stretchy) {
@@ -99,8 +93,8 @@ let MathOElement = class MathOElement extends MathMLElement {
             this.formStyle = `mo-${newFormStyle}`;
             this.classList.add(this.formStyle);
         }
-        let effectiveStretch = this.stretchy;
-        if (effectiveStretch === undefined) {
+        let effectiveStretch = this.stretchy && this.stretchy.trim().toLowerCase() === 'true';
+        if (!this.stretchy) {
             if (getComputedStyle(this).getPropertyValue('--math-style-stretchy').trim() === 'true') {
                 effectiveStretch = true;
             }
@@ -143,8 +137,8 @@ __decorate([
     __metadata("design:type", String)
 ], MathOElement.prototype, "form", void 0);
 __decorate([
-    property({ type: Boolean }),
-    __metadata("design:type", Boolean)
+    property({ type: String }),
+    __metadata("design:type", String)
 ], MathOElement.prototype, "stretchy", void 0);
 MathOElement = __decorate([
     element('m-o')
