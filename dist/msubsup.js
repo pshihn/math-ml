@@ -13,6 +13,7 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em 0 0;
       }
       ::slotted(:first-child) {
         padding-bottom: 0.3em;

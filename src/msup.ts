@@ -9,6 +9,7 @@ export class MathSupElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em 0 0;
       }
       ::slotted(:first-child) {
         padding-top: 0.16em;
