@@ -9,9 +9,10 @@ export class MathRootElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
+        vertical-align: bottom;
       }
       .msqrtContent {
-        padding: 0 0.2em;
+        padding: 1px 0.05em 0 0.2em;
         border-top: solid thin;
       }
       #msqrtGlyphSpan {

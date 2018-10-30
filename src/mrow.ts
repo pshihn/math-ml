@@ -1,20 +1,20 @@
 import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
-import { HorizCenterFlex } from './styles/common-styles.js';
+import { HorizFlex } from './styles/common-styles.js';
 
 @element('m-row')
 export class MathRowElement extends MathMLElement {
   render(): TemplateResult {
     return html`
     <style>
-      ${HorizCenterFlex}
+      ${HorizFlex}
       :host {
         display: inline-block;
       }
-      .layout.horizontal.center {
-        align-items: stretch;
+      .layout.horizontal {
+        align-items: baseline;
       }
     </style>
-    <div class="horizontal layout center"><slot></slot></div>
+    <div class="horizontal layout"><slot></slot></div>
     `;
   }
 }

@@ -5,20 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { MathMLElement, html, element } from './mathml-element.js';
-import { HorizCenterFlex } from './styles/common-styles.js';
+import { HorizFlex } from './styles/common-styles.js';
 let MathRowElement = class MathRowElement extends MathMLElement {
     render() {
         return html `
     <style>
-      ${HorizCenterFlex}
+      ${HorizFlex}
       :host {
         display: inline-block;
       }
-      .layout.horizontal.center {
-        align-items: stretch;
+      .layout.horizontal {
+        align-items: baseline;
       }
     </style>
-    <div class="horizontal layout center"><slot></slot></div>
+    <div class="horizontal layout"><slot></slot></div>
     `;
     }
 };

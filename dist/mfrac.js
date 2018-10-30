@@ -27,9 +27,11 @@ let MathFracElement = class MathFracElement extends MathMLElement {
       :host {
         display: inline-block;
         vertical-align: middle;
+        align-self: self-start;
+        margin: 0 0.16em;
       }
       #mfracN, #mfracD {
-        font-size: 0.8em;
+        font-size: 0.9em;
       }
       #mfracPanel.unbevelled {
         display: -ms-flexbox;
