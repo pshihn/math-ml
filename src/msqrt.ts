@@ -10,6 +10,7 @@ export class MathSqrtElement extends MathMLElement {
       :host {
         display: inline-block;
         vertical-align: bottom;
+        align-self: center;
       }
       .msqrtContent {
         padding: 1px 0.05em 0 0.2em;

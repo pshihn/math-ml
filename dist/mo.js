@@ -27,16 +27,27 @@ let MathOElement = class MathOElement extends MathMLElement {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
-        align-self: stretch;
+        align-self: baseline;
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
+        align-self: baseline;
       }
       :host(.mo-separator) {
         margin: 0 0.2em 0 0;
+        align-self: baseline;
       }
       :host(.mo-product) {
         margin: 0;
+        align-self: baseline;
+      }
+      :host(.mo-begin-brace) {
+        align-self: stretch;
+        margin: 0 0.05em 0 0.2em;
+      }
+      :host(.mo-end-brace) {
+        align-self: stretch;
+        margin: 0 0.2em 0 0.05em;
       }
       .invisible {
         opacity: 0;
@@ -60,7 +71,8 @@ let MathOElement = class MathOElement extends MathMLElement {
         let effectiveForm = this.form;
         if (!effectiveForm) {
             const parent = this.parentElement;
-            if (parent && (parent.tagName === 'M-ROW' || parent.tagName === 'MROW')) {
+            // if (parent && (parent.tagName === 'M-ROW' || parent.tagName === 'MROW')) {
+            if (parent) {
                 const children = parent.children;
                 if (children.length > 1) {
                     if (children[0] === this) {
@@ -71,14 +83,18 @@ let MathOElement = class MathOElement extends MathMLElement {
                     }
                 }
             }
-            if (!effectiveForm) {
-                const text = (this.textContent || '').trim();
-                if (text === ',' || text === ';') {
-                    specialRule = 'separator';
-                }
-                else if (text === '.' || text === '⋅') {
-                    specialRule = 'product';
-                }
+            const text = (this.textContent || '').trim();
+            if (text === ',' || text === ';') {
+                specialRule = 'separator';
+            }
+            else if (text === '.' || text === '⋅') {
+                specialRule = 'product';
+            }
+            else if (text.match(/^[\[{(]*$/)) {
+                specialRule = 'begin-brace';
+            }
+            else if (text.match(/^[\]})]*$/)) {
+                specialRule = 'end-brace';
             }
         }
         effectiveForm = effectiveForm || 'infix';
@@ -96,7 +112,7 @@ let MathOElement = class MathOElement extends MathMLElement {
                 effectiveStretch = true;
             }
             else {
-                effectiveStretch = effectiveForm === 'prefix' || effectiveForm === 'postfix';
+                effectiveStretch = effectiveForm === 'prefix' || effectiveForm === 'postfix' || specialRule === 'begin-brace' || specialRule === 'end-brace';
             }
         }
         span.style.width = null;
