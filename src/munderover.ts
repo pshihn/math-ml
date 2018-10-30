@@ -13,6 +13,7 @@ export class MathUnderOverElement extends MathMLElement {
       ${VertFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em;
       }
       .vertical.layout.reverse {
         -ms-flex-direction: column-reverse;

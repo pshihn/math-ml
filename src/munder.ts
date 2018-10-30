@@ -12,6 +12,7 @@ export class MathUnderElement extends MathMLElement {
       ${VertFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em;
       }
       ::slotted(:not(:first-child)) {
         width: 100%;
