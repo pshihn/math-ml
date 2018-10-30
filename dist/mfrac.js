@@ -31,7 +31,7 @@ let MathFracElement = class MathFracElement extends MathMLElement {
         margin: 0 0.16em;
       }
       #mfracN, #mfracD {
-        font-size: 0.8em;
+        font-size: 0.9em;
       }
       #mfracPanel.unbevelled {
         display: -ms-flexbox;
