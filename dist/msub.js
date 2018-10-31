@@ -45,9 +45,9 @@ let MathSubElement = class MathSubElement extends MathMLElement {
         if (nodes.length > 1) {
             setTimeout(() => {
                 const s1 = nodes[0].getBoundingClientRect();
-                const supNode = nodes[1];
-                const s2 = supNode.getBoundingClientRect();
-                supNode.style.opacity = '1';
+                const subNode = nodes[1];
+                const s2 = subNode.getBoundingClientRect();
+                subNode.style.opacity = '1';
                 const margins = [0, 0];
                 const hh = s1.height / 2;
                 let db = hh;
@@ -57,7 +57,7 @@ let MathSubElement = class MathSubElement extends MathMLElement {
                 else {
                     margins[0] = (hh + s2.height) - s1.height;
                 }
-                supNode.style.top = `${db}px`;
+                subNode.style.top = `${db}px`;
                 margins[1] = s2.width + 3;
                 this.style.margin = `0 ${margins[1]}px ${margins[0]}px 0`;
             }, 50);
