@@ -60,6 +60,10 @@
       padding: 5px;
       text-align: center;
     }
+
+    .tofix {
+      background: rgba(240, 137, 138, 0.15);
+    }
   </style>
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
   <script async src="../dist/mathml.min.js"></script>
@@ -105,6 +109,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4587/=ex22.png', math: `<math display="block">
         <mrow>
           <mi>x</mi>
@@ -124,6 +129,7 @@
       </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4588/=ex23.png', math: "<math display=\"block\"><mrow><mfrac><mi>a</mi><mrow><mi>b</mi><mo>/</mo><mn>2</mn></mrow></mfrac></mrow></math>" },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4589/=ex24.png', math: `<math display="block">
         <mrow>
           <msub>
@@ -455,6 +461,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4599/=ex41.png', math: `<math display="block">
         <mrow>
           <msub>
@@ -530,6 +537,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4601/=ex44.png', math: `<math display="block">
         <mover>
           <mrow>
@@ -547,6 +555,7 @@
       </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4582/=ex5.png', math: "<math display=\"block\"><mrow><msub><mi>y</mi><msup><mi>x</mi><mn>2</mn></msup></msub></mrow></math>" },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4602/=ex51.png', math: `<math display="block">
         <mrow>
           <munder>
@@ -582,6 +591,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4603/=ex52.png', math: `<math display="block">
         <mrow>
           <mo stretchy="false">{</mo>
@@ -729,6 +739,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4605/=ex54.png', math: `<math display="block">
         <mrow>
           <mi>det</mi>
@@ -893,6 +904,7 @@
       </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4598/=ex6.png', math: "<math display=\"block\"><msub><mi>y</mi><msub><mi>x</mi><mn>2</mn></msub></msub></math>" },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4583/=ex7.png', math: `<math display="block">
         <mrow>
           <msubsup>
@@ -905,6 +917,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4584/=ex8.png', math: `<math display="block">
         <msubsup>
           <mi>x</mi>
@@ -929,7 +942,7 @@
         </msubsup>
       </math>` },
       { img: 'https://mdn.mozillademos.org/files/13402/stirling29.png', math: `<math display="block"><mrow><munder><mo lspace="0em" rspace="0em">lim</mo><mrow><mi>n</mi><mo stretchy="false">→</mo><mo>+</mo><mn>∞</mn></mrow></munder><mfrac><msqrt><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow></msqrt><mrow><mi>n</mi><mo>!</mo></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></mfrac><mo>)</mo></mrow><mi>n</mi></msup></mrow><mo>=</mo><mn>1</mn></math>` },
-      { img: 'https://mdn.mozillademos.org/files/13438/determinant30.png', math: `<math display="block"><mrow><mrow><mo lspace="0em" rspace="0em">det</mo><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>σ</mi><mo>∊</mo><msub><mi>S</mi><mi>n</mi></msub></mrow></munder><mrow><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></math>` }
+      { tofix: true, img: 'https://mdn.mozillademos.org/files/13438/determinant30.png', math: `<math display="block"><mrow><mrow><mo lspace="0em" rspace="0em">det</mo><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>σ</mi><mo>∊</mo><msub><mi>S</mi><mi>n</mi></msub></mrow></munder><mrow><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></math>` }
     ];
 
     const table = document.querySelector('table');
@@ -940,6 +953,9 @@
         <td>${data[i].math.replace(/<m/g, '<m-').replace(/<m-ath/g, '<math-ml').replace(/<\/m/g, '</m-').replace(/<\/m-ath/g, '</math-ml').replace(/<none/g, '<m-none').replace(/<\/none/g, '</m-none')}</td>
         <td>${data[i].math}</td>
       `;
+      if (data[i].tofix) {
+        tr.classList.add('tofix');
+      }
       table.appendChild(tr);
     }
   </script>

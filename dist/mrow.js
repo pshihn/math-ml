@@ -35,12 +35,37 @@ let MathRowElement = class MathRowElement extends MathMLElement {
         }
         panel.classList.remove('centered');
         const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
+        let opCount = 0;
+        let centeringNodeCount = 0;
+        let center = false;
         for (let i = 0; i < nodes.length; i++) {
             const text = (nodes[i].textContent || '').trim();
             if (text === '=') {
-                panel.classList.add('centered');
+                center = true;
                 break;
             }
+            const tagName = nodes[i].tagName.toLowerCase();
+            switch (tagName) {
+                case 'm-underover':
+                case 'm-under':
+                case 'm-over':
+                case 'm-subsup':
+                    centeringNodeCount++;
+                    break;
+                case 'm-o':
+                    opCount++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (!center) {
+            if (centeringNodeCount && (!opCount)) {
+                center = true;
+            }
+        }
+        if (center) {
+            panel.classList.add('centered');
         }
     }
 };
