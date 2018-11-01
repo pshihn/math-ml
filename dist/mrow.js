@@ -20,6 +20,11 @@ let MathRowElement = class MathRowElement extends MathMLElement {
       .layout.horizontal.centered {
         align-items: center;
       }
+      .layout.horizontal.justified {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
     </style>
     <div id="mrowPanel" class="horizontal layout"><slot @slotchange="${this.onSlotChange}"></slot></div>
     `;
@@ -66,6 +71,12 @@ let MathRowElement = class MathRowElement extends MathMLElement {
         }
         if (center) {
             panel.classList.add('centered');
+        }
+        panel.classList.remove('justified');
+        if ((getComputedStyle(this).getPropertyValue('--math-underover-align') || '').trim() === 'center'
+            || (getComputedStyle(this).getPropertyValue('--math-under-align') || '').trim() === 'center'
+            || (getComputedStyle(this).getPropertyValue('--math-over-align') || '').trim() === 'center') {
+            panel.classList.add('justified');
         }
     }
 };
