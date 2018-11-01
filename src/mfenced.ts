@@ -70,7 +70,7 @@ export class MathFencedElement extends MathMLElement {
         if (i === 0 && this.open) {
           const mo = new MathOElement();
           if (this.isStretchyString(this.open.trim())) {
-            mo.stretchy = true;
+            mo.stretchy = 'true';
           }
           mo.textContent = this.open;
           panel.appendChild(mo);
@@ -84,7 +84,7 @@ export class MathFencedElement extends MathMLElement {
             sepIndex++;
             const mo = new MathOElement();
             if (this.isStretchyString(sep)) {
-              mo.stretchy = true;
+              mo.stretchy = 'true';
             }
             mo.textContent = sep;
             panel.appendChild(mo);
@@ -93,7 +93,7 @@ export class MathFencedElement extends MathMLElement {
         if (i === (nodes.length - 1) && this.close) {
           const mo = new MathOElement();
           if (this.isStretchyString(this.close.trim())) {
-            mo.stretchy = true;
+            mo.stretchy = 'true';
           }
           mo.textContent = this.close;
           panel.appendChild(mo);

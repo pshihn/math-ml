@@ -21,13 +21,14 @@ let MathUnderElement = class MathUnderElement extends MathMLElement {
       ${VertFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em;
       }
       ::slotted(:not(:first-child)) {
         width: 100%;
         line-height: 1;
         margin: 0;
         text-align: var(--math-under-align, center);
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.8em);
         --math-style-stretchy: true;

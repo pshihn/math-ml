@@ -5,7 +5,7 @@ export declare type MathOperatorForm = 'prefix' | 'infix' | 'postfix';
 @element('m-o')
 export class MathOElement extends MathMLElement {
   @property({ type: String }) form?: MathOperatorForm;
-  @property({ type: Boolean }) stretchy?: boolean;
+  @property({ type: String }) stretchy?: string;
 
   private formStyle = '';
 
@@ -23,33 +23,39 @@ export class MathOElement extends MathMLElement {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
-        align-self: baseline;
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
-        align-self: baseline;
       }
       :host(.mo-separator) {
         margin: 0 0.2em 0 0;
-        align-self: baseline;
       }
       :host(.mo-product) {
         margin: 0;
-        align-self: baseline;
       }
       :host(.mo-begin-brace) {
-        align-self: stretch;
         margin: 0 0.05em 0 0.2em;
       }
       :host(.mo-end-brace) {
-        align-self: stretch;
         margin: 0 0.2em 0 0.05em;
+      }
+      :host(.mo-neut-brace) {
+        margin: 0 0.16em;
       }
       :host(.mo-stretchy) {
         align-self: stretch;
       }
+      :host(.mo-bigger) {
+        line-height: 1.1;
+        font-size: 1.8em;
+      }
       .invisible {
         opacity: 0;
+      }
+      .fullWidthSpan {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
       }
     </style>
     <span class="invisible"><slot @slotchange="${this.onSlotChange}"></slot></span>
@@ -58,7 +64,6 @@ export class MathOElement extends MathMLElement {
 
   updated() {
     this.onSlotChange();
-
   }
 
   private onSlotChange() {
@@ -79,7 +84,18 @@ export class MathOElement extends MathMLElement {
       specialRule = 'begin-brace';
     } else if (text.match(/^[\]})]*$/)) {
       specialRule = 'end-brace';
+    } else if (text.match(/^[|]*$/)) {
+      specialRule = 'neut-brace';
     }
+
+    // bigger text for math ops
+    this.classList.remove('mo-bigger');
+    if (text && (0x2200 <= text.charCodeAt(0)) && (text.charCodeAt(0) <= 0x2233)) {
+      if ((getComputedStyle(this).getPropertyValue('--math-style-level') || '').trim() !== 'sub') {
+        this.classList.add('mo-bigger');
+      }
+    }
+
     const newFormStyle = specialRule || 'infix';
     if (this.formStyle !== newFormStyle) {
       if (this.formStyle) {
@@ -88,21 +104,23 @@ export class MathOElement extends MathMLElement {
       this.formStyle = `mo-${newFormStyle}`;
       this.classList.add(this.formStyle);
     }
-    let effectiveStretch = this.stretchy;
-    if (effectiveStretch === undefined) {
+    let effectiveStretch = this.stretchy && this.stretchy.trim().toLowerCase() === 'true';
+    if (!this.stretchy) {
       if (getComputedStyle(this).getPropertyValue('--math-style-stretchy').trim() === 'true') {
         effectiveStretch = true;
       } else {
-        effectiveStretch = specialRule === 'begin-brace' || specialRule === 'end-brace';
+        effectiveStretch = specialRule === 'begin-brace' || specialRule === 'end-brace' || specialRule === 'neut-brace';
       }
     }
     span.style.width = null;
     if (!effectiveStretch) {
+      span.classList.add('fullWidthSpan');
       this.classList.remove('mo-stretchy');
       span.style.transform = null;
       span.style.lineHeight = null;
       span.classList.remove('invisible');
     } else {
+      span.classList.remove('fullWidthSpan');
       this.classList.add('mo-stretchy');
       span.style.lineHeight = '1';
       setTimeout(() => {

@@ -13,29 +13,66 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
+        position: relative;
       }
       ::slotted(:first-child) {
-        padding-bottom: 0.3em;
-        padding-top: 0.3em;
         padding-right: 0.16em;
       }
-      ::slotted(:nth-child(2)) {
+      ::slotted(:not(:first-child)) {
         font-size: 0.75em;
-        align-self: flex-end;
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
-      }
-      ::slotted(:nth-child(3)) {
-        font-size: 0.75em;
-        --math-style-displaystyle: false;
-        counter-increment: math-style-scriptlevel;
-        transform: translateX(-100%);
+        position: absolute;
+        left: 100%;
+        opacity: 0;
+        line-height: 1;
       }
     </style>
     <div class="horizontal layout">
-      <slot></slot>
+      <slot @slotchange="${this.refreshSlot}"></slot>
     </div>
     `;
+    }
+    refreshSlot() {
+        if (!this.shadowRoot) {
+            return;
+        }
+        const slot = this.shadowRoot.querySelector('slot');
+        if (!slot) {
+            return;
+        }
+        const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
+        if (nodes.length > 2) {
+            setTimeout(() => {
+                const s1 = nodes[0].getBoundingClientRect();
+                const subNode = nodes[1];
+                const supNode = nodes[2];
+                const subSize = subNode.getBoundingClientRect();
+                const supSize = supNode.getBoundingClientRect();
+                subNode.style.opacity = '1';
+                supNode.style.opacity = '1';
+                const margins = [0, 0, 0];
+                // sub
+                const hh = s1.height / 2;
+                let db = hh;
+                if ((hh + subSize.height) < s1.height) {
+                    db = s1.height - subSize.height;
+                }
+                else {
+                    margins[2] = (hh + subSize.height) - s1.height;
+                }
+                subNode.style.top = `${db}px`;
+                margins[1] = subSize.width + 5;
+                // sup
+                db = supSize.bottom - (s1.bottom - (s1.height / 2));
+                if (db > 0) {
+                    supNode.style.top = `${-db}px`;
+                    margins[0] = db;
+                }
+                margins[1] = Math.max(supSize.width + 5, margins[1]);
+                this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px 0`;
+            }, 50);
+        }
     }
 };
 MathSubSupElement = __decorate([

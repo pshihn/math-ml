@@ -24,6 +24,7 @@ export class MathFracElement extends MathMLElement {
       }
       #mfracN, #mfracD {
         font-size: 0.9em;
+        --math-style-level: sub;
       }
       #mfracPanel.unbevelled {
         display: -ms-flexbox;

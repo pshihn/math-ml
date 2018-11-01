@@ -17,9 +17,67 @@ let MathRowElement = class MathRowElement extends MathMLElement {
       .layout.horizontal {
         align-items: baseline;
       }
+      .layout.horizontal.centered {
+        align-items: center;
+      }
+      .layout.horizontal.justified {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
     </style>
-    <div class="horizontal layout"><slot></slot></div>
+    <div id="mrowPanel" class="horizontal layout"><slot @slotchange="${this.onSlotChange}"></slot></div>
     `;
+    }
+    onSlotChange() {
+        if (!this.shadowRoot) {
+            return;
+        }
+        const slot = this.shadowRoot.querySelector('slot');
+        const panel = this.shadowRoot.querySelector('#mrowPanel');
+        if (!slot || !panel) {
+            return;
+        }
+        panel.classList.remove('centered');
+        const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
+        let opCount = 0;
+        let centeringNodeCount = 0;
+        let center = false;
+        for (let i = 0; i < nodes.length; i++) {
+            const text = (nodes[i].textContent || '').trim();
+            if (text === '=') {
+                center = true;
+                break;
+            }
+            const tagName = nodes[i].tagName.toLowerCase();
+            switch (tagName) {
+                case 'm-underover':
+                case 'm-under':
+                case 'm-over':
+                case 'm-subsup':
+                    centeringNodeCount++;
+                    break;
+                case 'm-o':
+                    opCount++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (!center) {
+            if (centeringNodeCount && (!opCount)) {
+                center = true;
+            }
+        }
+        if (center) {
+            panel.classList.add('centered');
+        }
+        panel.classList.remove('justified');
+        if ((getComputedStyle(this).getPropertyValue('--math-underover-align') || '').trim() === 'center'
+            || (getComputedStyle(this).getPropertyValue('--math-under-align') || '').trim() === 'center'
+            || (getComputedStyle(this).getPropertyValue('--math-over-align') || '').trim() === 'center') {
+            panel.classList.add('justified');
+        }
     }
 };
 MathRowElement = __decorate([

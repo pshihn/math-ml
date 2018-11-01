@@ -13,6 +13,7 @@ export class MathUnderOverElement extends MathMLElement {
       ${VertFlex}
       :host {
         display: inline-block;
+        margin: 0 0.16em;
       }
       .vertical.layout.reverse {
         -ms-flex-direction: column-reverse;
@@ -24,7 +25,7 @@ export class MathUnderOverElement extends MathMLElement {
         line-height: 1;
         margin: 0;
         text-align: var(--math-underover-align, center);
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.75em);
         --math-style-stretchy: true;
@@ -34,7 +35,7 @@ export class MathUnderOverElement extends MathMLElement {
         line-height: 1;
         margin: 0;
         text-align: var(--math-underover-align, center);
-        --math-style-displaystyle: false;
+        --math-style-level: sub;
         counter-increment: math-style-scriptlevel;
         font-size: var(--math-over-font-size, 0.75em);
         --math-style-stretchy: true;

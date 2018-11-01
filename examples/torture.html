@@ -60,6 +60,10 @@
       padding: 5px;
       text-align: center;
     }
+
+    .tofix {
+      background: rgba(240, 137, 138, 0.15);
+    }
   </style>
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
   <script async src="../dist/mathml.min.js"></script>
@@ -84,11 +88,144 @@
     const data = [
       { img: 'https://mdn.mozillademos.org/files/3076/ex1.png', math: `<math display="block"><mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mn>2</mn></msup></mrow></math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4579/=ex2.png', math: `<math display="block"><mrow><mmultiscripts><mi>F</mi><mn>3</mn><none></none><mprescripts></mprescripts><mn>2</mn><none></none></mmultiscripts></mrow></math>` },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4586/=ex21.png', math: "<math display=\"block\"><mrow><mfrac><mrow><mi>x</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4587/=ex22.png', math: "<math display=\"block\"><mrow><mi>x</mi><mo>+</mo><msup><mi>y</mi><mfrac><mn>2</mn><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac></msup></mrow></math>" },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4586/=ex21.png', math: `<math display="block">
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>x</mi>
+              <mo>+</mo>
+              <msup>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+            <mrow>
+              <mi>k</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>` },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4587/=ex22.png', math: `<math display="block">
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <msup>
+            <mi>y</mi>
+            <mfrac>
+              <mn>2</mn>
+              <mrow>
+                <mi>k</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+            </mfrac>
+          </msup>
+        </mrow>
+      </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4588/=ex23.png', math: "<math display=\"block\"><mrow><mfrac><mi>a</mi><mrow><mi>b</mi><mo>/</mo><mn>2</mn></mrow></mfrac></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4589/=ex24.png', math: "<math display=\"block\"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><mfrac><mn>1</mn><mstyledisplaystyle=\"true\"scriptlevel=\"0\"><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><mfrac><mn>1</mn><mstyledisplaystyle=\"true\"scriptlevel=\"0\"><msub><mi>a</mi><mn>2</mn></msub><mo>+</mo><mfrac><mn>1</mn><mstyledisplaystyle=\"true\"scriptlevel=\"0\"><msub><mi>a</mi><mn>3</mn></msub><mo>+</mo><mfrac><mn>1</mn><mstyledisplaystyle=\"true\"scriptlevel=\"0\"><msub><mi>a</mi><mn>4</mn></msub></mstyle></mfrac></mstyle></mfrac></mstyle></mfrac></mstyle></mfrac></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4590/=ex25.png', math: "<math display=\"block\"><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><mfrac><mn>1</mn><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><mfrac><mn>1</mn><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>+</mo><mfrac><mn>1</mn><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>+</mo><mfrac><mn>1</mn><mrow><msub><mi>a</mi><mn>4</mn></msub></mrow></mfrac></mrow></mfrac></mrow></mfrac></mrow></mfrac></mrow></math>" },
+      {
+        tofix: true,
+        img: 'https://developer.mozilla.org/@api/deki/files/4589/=ex24.png', math: `<math display="block">
+        <mrow>
+          <msub>
+            <mi>a</mi>
+            <mn>0</mn>
+          </msub>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mstyle displaystyle="true" scriptlevel="0">
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mstyle displaystyle="true" scriptlevel="0">
+                  <msub>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mstyle displaystyle="true" scriptlevel="0">
+                      <msub>
+                        <mi>a</mi>
+                        <mn>3</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mstyle displaystyle="true" scriptlevel="0">
+                          <msub>
+                            <mi>a</mi>
+                            <mn>4</mn>
+                          </msub>
+                        </mstyle>
+                      </mfrac>
+                    </mstyle>
+                  </mfrac>
+                </mstyle>
+              </mfrac>
+            </mstyle>
+          </mfrac>
+        </mrow>
+      </math>` },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4590/=ex25.png', math: `<math>
+        <mrow>
+          <msub>
+            <mi>a</mi>
+            <mn>0</mn>
+          </msub>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <msub>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <msub>
+                        <mi>a</mi>
+                        <mn>3</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                          <msub>
+                            <mi>a</mi>
+                            <mn>4</mn>
+                          </msub>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4591/=ex26.png', math: `<math display="block"><mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mrow><mi>k</mi><mo>/</mo><mn>2</mn></mrow></mfrac><mo>)</mo></mrow></math>` },
       {
         img: 'https://developer.mozilla.org/@api/deki/files/4592/=ex27.png', math: `<math display="block">
@@ -168,9 +305,145 @@
         </mrow>
       </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4580/=ex3.png', math: "<math display=\"block\"><mrow><msup><mi>x</mi><mrow><mn>2</mn><mi>y</mi></mrow></msup></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4594/=ex30.png', math: "<math display=\"block\"><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>p</mi></munderover><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>q</mi></munderover><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>r</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>b</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><msub><mi>c</mi><mrow><mi>k</mi><mi>i</mi></mrow></msub></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4595/=ex31.png', math: "<math display=\"block\"><mrow><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><msqrt><mn>1</mn><mo>+</mo><mi>x</mi></msqrt></msqrt></msqrt></msqrt></msqrt></msqrt></msqrt></mrow></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4596/=ex34.png', math: "<math display=\"block\"><mrow><mrow><mo>(</mo><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo>∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo>∂</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo></mrow><msup><mrow><mominsize=\"150%\">|</mo><mi>φ<!--arphi--></mi><mostretchy=\"false\">(</mo><mi>x</mi><mo>+</mo><mimathvariant=\"normal\">i</mi><mi>y</mi><mostretchy=\"false\">)</mo><mominsize=\"150%\">|</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math>" },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4594/=ex30.png', math: `<math display="block">
+        <mrow>
+          <munderover>
+            <mo>∑</mo>
+            <mrow>
+              <mi>i</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>p</mi>
+          </munderover>
+          <munderover>
+            <mo>∑</mo>
+            <mrow>
+              <mi>j</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>q</mi>
+          </munderover>
+          <munderover>
+            <mo>∑</mo>
+            <mrow>
+              <mi>k</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>r</mi>
+          </munderover>
+          <msub>
+            <mi>a</mi>
+            <mrow>
+              <mi>i</mi>
+              <mi>j</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>b</mi>
+            <mrow>
+              <mi>j</mi>
+              <mi>k</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>c</mi>
+            <mrow>
+              <mi>k</mi>
+              <mi>i</mi>
+            </mrow>
+          </msub>
+        </mrow>
+      </math>` },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4595/=ex31.png', math: `<math display="block">
+        <mrow>
+          <msqrt>
+            <mn>1</mn>
+            <mo>+</mo>
+            <msqrt>
+              <mn>1</mn>
+              <mo>+</mo>
+              <msqrt>
+                <mn>1</mn>
+                <mo>+</mo>
+                <msqrt>
+                  <mn>1</mn>
+                  <mo>+</mo>
+                  <msqrt>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <msqrt>
+                      <mn>1</mn>
+                      <mo>+</mo>
+                      <msqrt>
+                        <mn>1</mn>
+                        <mo>+</mo>
+                        <mi>x</mi>
+                      </msqrt>
+                    </msqrt>
+                  </msqrt>
+                </msqrt>
+              </msqrt>
+            </msqrt>
+          </msqrt>
+        </mrow>
+      </math>`},
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4596/=ex34.png', math: `<math display="block">
+        <mrow>
+          <mrow>
+            <mo>(</mo>
+            <mfrac>
+              <msup>
+                <mo>∂</mo>
+                <mn>2</mn>
+              </msup>
+              <mrow>
+                <mo>∂</mo>
+                <msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mfrac>
+              <msup>
+                <mo>∂</mo>
+                <mn>2</mn>
+              </msup>
+              <mrow>
+                <mo>∂</mo>
+                <msup>
+                  <mi>y</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <msup>
+            <mrow>
+              <mo minsize="150%">|</mo>
+              <mi>φ <!-- \varphi --></mi>
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo>+</mo>
+              <mi mathvariant="normal">i</mi>
+              <mi>y</mi>
+              <mo stretchy="false">)</mo>
+              <mo minsize="150%">|</mo>
+            </mrow>
+            <mn>2</mn>
+          </msup>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+      </math>` },
       { img: 'https://developer.mozilla.org/@api/deki/files/4581/=ex4.png', math: "<math display=\"block\"><mrow><msup><mn>2</mn><msup><mn>2</mn><msup><mn>2</mn><mi>x</mi></msup></msup></msup></mrow></math>" },
       {
         img: 'https://developer.mozilla.org/@api/deki/files/4597/=ex40.png', math: `<math display="block">
@@ -461,6 +734,7 @@
         </mrow>
       </math>` },
       {
+        tofix: true,
         img: 'https://developer.mozilla.org/@api/deki/files/4605/=ex54.png', math: `<math display="block">
         <mrow>
           <mi>det</mi>
@@ -636,8 +910,31 @@
           <mi>π</mi>
         </mrow>
       </math>` },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4584/=ex8.png', math: "<math display=\"block\"><msubsup><mi>x</mi><msubsup><mi>y</mi><mi>b</mi><mi>a</mi></msubsup><msubsup><mi>z</mi><mi>c</mi><mi>d</mi></msubsup></msubsup></math>" },
-      { img: 'https://developer.mozilla.org/@api/deki/files/4585/=ex9.png', math: "<math display=\"block\"><msubsup><mi>y</mi><mn>3</mn><mo>‴</mo></msubsup></math>" },
+      {
+        tofix: true,
+        img: 'https://developer.mozilla.org/@api/deki/files/4584/=ex8.png', math: `<math display="block">
+        <msubsup>
+          <mi>x</mi>
+          <msubsup>
+            <mi>y</mi>
+            <mi>b</mi>
+            <mi>a</mi>
+          </msubsup>
+          <msubsup>
+            <mi>z</mi>
+            <mi>c</mi>
+            <mi>d</mi>
+          </msubsup>
+        </msubsup>
+      </math>` },
+      {
+        img: 'https://developer.mozilla.org/@api/deki/files/4585/=ex9.png', math: `<math display="block">
+        <msubsup>
+          <mi>y</mi>
+          <mn>3</mn>
+          <mo>‴</mo>
+        </msubsup>
+      </math>` },
       { img: 'https://mdn.mozillademos.org/files/13402/stirling29.png', math: `<math display="block"><mrow><munder><mo lspace="0em" rspace="0em">lim</mo><mrow><mi>n</mi><mo stretchy="false">→</mo><mo>+</mo><mn>∞</mn></mrow></munder><mfrac><msqrt><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow></msqrt><mrow><mi>n</mi><mo>!</mo></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></mfrac><mo>)</mo></mrow><mi>n</mi></msup></mrow><mo>=</mo><mn>1</mn></math>` },
       { img: 'https://mdn.mozillademos.org/files/13438/determinant30.png', math: `<math display="block"><mrow><mrow><mo lspace="0em" rspace="0em">det</mo><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>σ</mi><mo>∊</mo><msub><mi>S</mi><mi>n</mi></msub></mrow></munder><mrow><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></math>` }
     ];
@@ -650,6 +947,9 @@
         <td>${data[i].math.replace(/<m/g, '<m-').replace(/<m-ath/g, '<math-ml').replace(/<\/m/g, '</m-').replace(/<\/m-ath/g, '</math-ml').replace(/<none/g, '<m-none').replace(/<\/none/g, '</m-none')}</td>
         <td>${data[i].math}</td>
       `;
+      if (data[i].tofix) {
+        tr.classList.add('tofix');
+      }
       table.appendChild(tr);
     }
   </script>
