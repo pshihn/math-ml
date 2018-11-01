@@ -60,7 +60,7 @@ export class MathSubSupElement extends MathMLElement {
           margins[2] = (hh + subSize.height) - s1.height;
         }
         subNode.style.top = `${db}px`;
-        margins[1] = subSize.width + 3;
+        margins[1] = subSize.width + 5;
 
         // sup
         db = supSize.bottom - (s1.bottom - (s1.height / 2));
@@ -68,7 +68,7 @@ export class MathSubSupElement extends MathMLElement {
           supNode.style.top = `${-db}px`;
           margins[0] = db;
         }
-        margins[1] = Math.max(supSize.width + 3, margins[1]);
+        margins[1] = Math.max(supSize.width + 5, margins[1]);
 
 
         this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px 0`;

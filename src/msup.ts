@@ -51,7 +51,7 @@ export class MathSupElement extends MathMLElement {
           supNode.style.top = `${-db}px`;
           margins[0] = db;
         }
-        margins[1] = s2.width + 3;
+        margins[1] = s2.width + 5;
         this.style.margin = `${margins[0]}px ${margins[1]}px 0 0`;
       }, 50);
     }

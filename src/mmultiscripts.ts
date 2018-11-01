@@ -83,7 +83,7 @@ export class MathMultiScriptsElement extends MathMLElement {
               margins[2] = (hh + subSize.height) - s1.height;
             }
             subNode.style.top = `${db}px`;
-            margins[1] = subSize.width + 3;
+            margins[1] = subSize.width + 5;
           }
           // sup
           if (postNodes[1]) {
@@ -96,7 +96,7 @@ export class MathMultiScriptsElement extends MathMLElement {
               supNode.style.top = `${-db}px`;
               margins[0] = db;
             }
-            margins[1] = Math.max(supSize.width + 3, margins[1]);
+            margins[1] = Math.max(supSize.width + 5, margins[1]);
           }
         }
         // do pre
@@ -115,7 +115,7 @@ export class MathMultiScriptsElement extends MathMLElement {
               margins[2] = Math.max((hh + subSize.height) - s1.height, margins[2]);
             }
             subNode.style.top = `${db}px`;
-            margins[3] = Math.max(subSize.width + 3, margins[3]);
+            margins[3] = Math.max(subSize.width + 5, margins[3]);
           }
           // sup
           if (preNodes[1]) {
@@ -128,7 +128,7 @@ export class MathMultiScriptsElement extends MathMLElement {
               supNode.style.top = `${-db}px`;
               margins[0] = Math.max(db, margins[0]);
             }
-            margins[3] = Math.max(supSize.width + 3, margins[3]);
+            margins[3] = Math.max(supSize.width + 5, margins[3]);
           }
         }
         this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px ${margins[3]}px`;

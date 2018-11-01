@@ -16,7 +16,8 @@ let MathSubElement = class MathSubElement extends MathMLElement {
         position: relative;
       }
       ::slotted(:first-child) {
-        padding-right: 0.16em;
+        padding-right: 0.1em;
+        margin: 0;
       }
       ::slotted(:not(:first-child)) {
         font-size: 0.8em;
@@ -58,7 +59,7 @@ let MathSubElement = class MathSubElement extends MathMLElement {
                     margins[0] = (hh + s2.height) - s1.height;
                 }
                 subNode.style.top = `${db}px`;
-                margins[1] = s2.width + 3;
+                margins[1] = s2.width + 5;
                 this.style.margin = `0 ${margins[1]}px ${margins[0]}px 0`;
             }, 50);
         }
