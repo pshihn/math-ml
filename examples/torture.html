@@ -65,7 +65,7 @@
       background: rgba(240, 137, 138, 0.15);
     }
   </style>
-  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+  <!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script> -->
   <script async src="../dist/mathml.min.js"></script>
 </head>
 
@@ -936,7 +936,7 @@
         </msubsup>
       </math>` },
       { img: 'https://mdn.mozillademos.org/files/13402/stirling29.png', math: `<math display="block"><mrow><munder><mo lspace="0em" rspace="0em">lim</mo><mrow><mi>n</mi><mo stretchy="false">→</mo><mo>+</mo><mn>∞</mn></mrow></munder><mfrac><msqrt><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow></msqrt><mrow><mi>n</mi><mo>!</mo></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></mfrac><mo>)</mo></mrow><mi>n</mi></msup></mrow><mo>=</mo><mn>1</mn></math>` },
-      { img: 'https://mdn.mozillademos.org/files/13438/determinant30.png', math: `<math display="block"><mrow><mrow><mo lspace="0em" rspace="0em">det</mo><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>σ</mi><mo>∊</mo><msub><mi>S</mi><mi>n</mi></msub></mrow></munder><mrow><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></math>` }
+      { tofix: true, img: 'https://mdn.mozillademos.org/files/13438/determinant30.png', math: `<math display="block"><mrow><mrow><mo lspace="0em" rspace="0em">det</mo><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>σ</mi><mo>∊</mo><msub><mi>S</mi><mi>n</mi></msub></mrow></munder><mrow><mi>ϵ</mi><mo stretchy="false">(</mo><mi>σ</mi><mo stretchy="false">)</mo></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><msub><mi>σ</mi><mi>i</mi></msub></mrow></msub></mrow></mrow></math>` }
     ];
 
     const table = document.querySelector('table');
