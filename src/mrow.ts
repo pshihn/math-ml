@@ -57,6 +57,9 @@ export class MathRowElement extends MathMLElement {
         case 'm-o':
           opCount++;
           break;
+        case 'm-table':
+          center = true;
+          break;
         default:
           break;
       }
