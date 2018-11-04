@@ -29,7 +29,6 @@ let MathUnderElement = class MathUnderElement extends MathMLElement {
         margin: 0;
         text-align: var(--math-under-align, center);
         --math-style-level: sub;
-        counter-increment: math-style-scriptlevel;
         font-size: var(--math-under-font-size, 0.8em);
         --math-style-stretchy: true;
       }

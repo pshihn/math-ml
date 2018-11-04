@@ -28,3 +28,4 @@ import './mphantom.js';
 import './merror.js';
 import './mfenced.js';
 import './mpadded.js';
+import './mstyle.js';

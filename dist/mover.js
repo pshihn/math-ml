@@ -34,7 +34,6 @@ let MathOverElement = class MathOverElement extends MathMLElement {
         margin: 0;
         text-align: var(--math-over-align, center);
         --math-style-level: sub;
-        counter-increment: math-style-scriptlevel;
         font-size: var(--math-over-font-size, 0.8em);
         --math-style-stretchy: true;
       }
