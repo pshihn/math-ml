@@ -25,7 +25,6 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
       ::slotted(:not(:first-child)) {
         font-size: 0.75em;
         --math-style-level: sub;
-        counter-increment: math-style-scriptlevel;
         position: absolute;
         left: 100%;
         opacity: 0;

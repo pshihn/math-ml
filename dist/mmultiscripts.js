@@ -25,7 +25,6 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
       ::slotted(:not(:first-child)) {
         font-size: 0.75em;
         --math-style-level: sub;
-        counter-increment: math-style-scriptlevel;
         position: absolute;
         opacity: 0;
         line-height: 1;
