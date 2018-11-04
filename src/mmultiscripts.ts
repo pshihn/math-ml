@@ -3,6 +3,7 @@ import { AllFlex } from './styles/common-styles.js';
 
 @element('m-multiscripts')
 export class MathMultiScriptsElement extends MathMLElement {
+  private pendingLayout = false;
   render(): TemplateResult {
     return html`
     <style>
@@ -36,6 +37,9 @@ export class MathMultiScriptsElement extends MathMLElement {
   }
 
   private refreshSlot() {
+    if (this.pendingLayout) {
+      return;
+    }
     if (!this.shadowRoot) {
       return;
     }
@@ -49,7 +53,8 @@ export class MathMultiScriptsElement extends MathMLElement {
     }
 
     if (nodes.length > 2) {
-      setTimeout(() => {
+      this.pendingLayout = true;
+      const runnable = () => {
         const postNodes: (HTMLElement | null)[] = [null, null];
         const preNodes: (HTMLElement | null)[] = [null, null];
         let current = postNodes;
@@ -132,7 +137,12 @@ export class MathMultiScriptsElement extends MathMLElement {
           }
         }
         this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px ${margins[3]}px`;
-      }, 100);
+      };
+      setTimeout(runnable, 100);
+      setTimeout(() => {
+        this.pendingLayout = false;
+        runnable();
+      }, 800);
     }
   }
 }

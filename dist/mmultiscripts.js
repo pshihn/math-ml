@@ -7,6 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { MathMLElement, html, element } from './mathml-element.js';
 import { AllFlex } from './styles/common-styles.js';
 let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElement {
+    constructor() {
+        super(...arguments);
+        this.pendingLayout = false;
+    }
     render() {
         return html `
     <style>
@@ -39,6 +43,9 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
     `;
     }
     refreshSlot() {
+        if (this.pendingLayout) {
+            return;
+        }
         if (!this.shadowRoot) {
             return;
         }
@@ -51,7 +58,8 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
             return;
         }
         if (nodes.length > 2) {
-            setTimeout(() => {
+            this.pendingLayout = true;
+            const runnable = () => {
                 const postNodes = [null, null];
                 const preNodes = [null, null];
                 let current = postNodes;
@@ -138,7 +146,12 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
                     }
                 }
                 this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px ${margins[3]}px`;
-            }, 100);
+            };
+            setTimeout(runnable, 100);
+            setTimeout(() => {
+                this.pendingLayout = false;
+                runnable();
+            }, 800);
         }
     }
 };

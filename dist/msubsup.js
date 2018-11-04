@@ -7,6 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { MathMLElement, html, element } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 let MathSubSupElement = class MathSubSupElement extends MathMLElement {
+    constructor() {
+        super(...arguments);
+        this.pendingLayout = false;
+    }
     render() {
         return html `
     <style>
@@ -34,6 +38,9 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
     `;
     }
     refreshSlot() {
+        if (this.pendingLayout) {
+            return;
+        }
         if (!this.shadowRoot) {
             return;
         }
@@ -43,7 +50,8 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
         }
         const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
         if (nodes.length > 2) {
-            setTimeout(() => {
+            this.pendingLayout = true;
+            const runnable = () => {
                 const s1 = nodes[0].getBoundingClientRect();
                 const subNode = nodes[1];
                 const supNode = nodes[2];
@@ -71,7 +79,12 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
                 }
                 margins[1] = Math.max(supSize.width + 5, margins[1]);
                 this.style.margin = `${margins[0]}px ${margins[1]}px ${margins[2]}px 0`;
-            }, 50);
+            };
+            setTimeout(runnable, 50);
+            setTimeout(() => {
+                this.pendingLayout = false;
+                runnable();
+            }, 500);
         }
     }
 };
