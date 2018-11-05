@@ -20,7 +20,7 @@ npm install --save math-ml
 or simply from unpkg:
 
 ```html
-<script src="https://unpkg.com/windtalk@latest/dist/mathml.min.js"></script>
+<script src="https://unpkg.com/math-ml@latest/dist/mathml.min.js"></script>
 ```
 
 To create the following expression: 
@@ -66,4 +66,21 @@ These examples are ported versions from [Mozilla Dev Network](https://developer.
 
 ## Polyfill
 
+Math-ML comes with a polyfill that will check if your browser has built in MathML support. If not, then it replaces all MathML elements with Math-ML custom elements.
 
+To use the polyfill:
+
+```html
+<script src="https://unpkg.com/math-ml@latest/dist/mathml.polyfill.js"></script>
+```
+
+## Custom Element support
+
+While most browsers (Chrome, Firefox, Safari) support custom elements, incluse the web-components polyfill to enabled them in unsupported ones
+
+```html
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+```
+
+## License
+[MIT License](https://github.com/pshihn/windtalk/blob/master/LICENSE) (c) [Preet Shihn](https://twitter.com/preetster)
