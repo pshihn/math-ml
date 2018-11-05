@@ -19,13 +19,13 @@ _Note: It's not feature complete with the MathML spec, but supports most complic
 
 Install from npm:
 ```
-npm install --save @shihn/math-ml
+npm install --save mathml-elements
 ```
 
 or simply from unpkg:
 
 ```html
-<script src="https://unpkg.com/math-ml@latest/dist/bundled/mathml.min.js"></script>
+<script src="https://unpkg.com/mathml-elements@latest/dist/bundled/mathml.min.js"></script>
 ```
 
 To create the following expression: 
@@ -76,7 +76,7 @@ Math-ML comes with a polyfill that will check if your browser has built in MathM
 To use the polyfill:
 
 ```html
-<script src="https://unpkg.com/math-ml@latest/dist/bundled/mathml.polyfill.js"></script>
+<script src="https://unpkg.com/mathml-elements@latest/dist/bundled/mathml.polyfill.js"></script>
 ```
 
 ## Custom Element support
