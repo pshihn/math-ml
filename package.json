@@ -1,5 +1,5 @@
 {
-  "name": "math-ml",
+  "name": "@shihn/math-ml",
   "version": "0.1.0",
   "description": "Web components to replicate MathML",
   "main": "dist/bundled/mathml.min.js",

@@ -19,7 +19,7 @@ _Note: It's not feature complete with the MathML spec, but supports most complic
 
 Install from npm:
 ```
-npm install --save math-ml
+npm install --save @shihn/math-ml
 ```
 
 or simply from unpkg:
