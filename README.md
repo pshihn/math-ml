@@ -1,6 +1,7 @@
-![MathML example](https://i.imgur.com/NZvMjWM.png)
 
 # Math-ML
+
+![MathML example](https://i.imgur.com/NZvMjWM.png)
 
 A small (12.7kb gzipped) implementation of [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) using custom-elements. 
 
