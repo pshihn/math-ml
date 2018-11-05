@@ -5,13 +5,15 @@
 
 A small (12.7kb gzipped) implementation of [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) using custom-elements. 
 
-MathML is only supported on Firefox even thought it's been part of the HTML5 spec. This is a simple attempt to use basic javascript, CSS and some SVG to implement MathML compatible notation that works across all browsers. 
+MathML has been part of part of the HTML5 spec for some time now, but many browsers don't support it (Chrome, for example). This is a simple attempt to use basic javascript, CSS and some SVG to implement MathML compatible notation that works across all browsers. _(All rendering is done on the client side)._
 
 ## Implementation
 
 Math-ML is implemented using custom elements. There's a corresponding element for every MathML node. The root `<math>` node is replaced by `<math-ml>`. For all other nodes, the prefix `m` is replaces with `m-`. For example, `<mrow>` becomes `<m-row>` and `<msqrt>` becomes `<m-sqrt>`.
 
 This is available as a polyfill as well. If MathML is not detected on the browser (every browser except Firefox), the polyfill replaces all `<math>` nodes with corresponding `<math-ml>` nodes. 
+
+_Note: It's not feature complete with the MathML spec, but supports most complicates cases as seen in the [Torture Test](https://pshihn.github.io/math-ml/examples/examples/torture.html)._
 
 ## Usage
 
