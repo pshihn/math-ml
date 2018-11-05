@@ -23,7 +23,7 @@ or simply from unpkg:
 <script src="https://unpkg.com/windtalk@latest/dist/mathml.min.js"></script>
 ```
 
-To create the following image: 
+To create the following expression: 
 ![MathML example](https://mdn.mozillademos.org/files/3076/ex1.png)
 
 Using Math-ML components:
@@ -31,12 +31,10 @@ Using Math-ML components:
 <math-ml>
   <m-row>
     <m-sup>
-      <m-i>x</m-i>
-      <m-n>2</m-n>
+      <m-i>x</m-i><m-n>2</m-n>
     </m-sup>
     <m-sup>
-      <m-i>y</m-i>
-      <m-n>2</m-n>
+      <m-i>y</m-i><m-n>2</m-n>
     </m-sup>
   </m-row>
 </math-ml>
@@ -47,12 +45,10 @@ Raw MathML version:
 <math>
   <mrow>
     <msup>
-      <mi>x</mi>
-      <mn>2</mn>
+      <mi>x</mi><mn>2</mn>
     </msup>
     <msup>
-      <mi>y</mi>
-      <mn>2</mn>
+      <mi>y</mi><mn>2</mn>
     </msup>
   </mrow>
 </math>
