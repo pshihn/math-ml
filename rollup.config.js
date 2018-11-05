@@ -11,7 +11,7 @@ export default [
   {
     input: 'dist/all.js',
     output: {
-      file: `dist/mathml.min.js`,
+      file: `dist/bundled/mathml.min.js`,
       format: 'iife',
       name: 'mathml'
     },
@@ -21,7 +21,7 @@ export default [
   {
     input: 'dist/polyfill.js',
     output: {
-      file: `dist/mathml.polyfill.js`,
+      file: `dist/bundled/mathml.polyfill.js`,
       format: 'iife',
       name: 'mathmlPolyfill'
     },

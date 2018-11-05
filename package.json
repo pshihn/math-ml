@@ -2,8 +2,8 @@
   "name": "math-ml",
   "version": "0.1.0",
   "description": "Web components to replicate MathML",
-  "main": "dist/mathml.min.js",
-  "browser": "dist/mathml.min.js",
+  "main": "dist/bundled/mathml.min.js",
+  "browser": "dist/bundled/mathml.min.js",
   "module": "dist/all.js",
   "types": "dist/all.d.ts",
   "scripts": {

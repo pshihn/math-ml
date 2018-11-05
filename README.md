@@ -25,7 +25,7 @@ npm install --save math-ml
 or simply from unpkg:
 
 ```html
-<script src="https://unpkg.com/math-ml@latest/dist/mathml.min.js"></script>
+<script src="https://unpkg.com/math-ml@latest/dist/bundled/mathml.min.js"></script>
 ```
 
 To create the following expression: 
@@ -76,7 +76,7 @@ Math-ML comes with a polyfill that will check if your browser has built in MathM
 To use the polyfill:
 
 ```html
-<script src="https://unpkg.com/math-ml@latest/dist/mathml.polyfill.js"></script>
+<script src="https://unpkg.com/math-ml@latest/dist/bundled/mathml.polyfill.js"></script>
 ```
 
 ## Custom Element support
