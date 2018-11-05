@@ -27,6 +27,8 @@ let MathOElement = class MathOElement extends MathMLElement {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
@@ -65,7 +67,8 @@ let MathOElement = class MathOElement extends MathMLElement {
     <span class="invisible"><slot @slotchange="${this.onSlotChange}"></slot></span>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.onSlotChange();
     }
     onSlotChange() {

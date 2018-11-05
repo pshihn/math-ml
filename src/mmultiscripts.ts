@@ -11,6 +11,8 @@ export class MathMultiScriptsElement extends MathMLElement {
       :host {
         display: inline-block;
         position: relative;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       ::slotted(:first-child) {
         padding: 0 0.16em;

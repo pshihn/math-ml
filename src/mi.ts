@@ -8,6 +8,8 @@ export class MathIElement extends MathMLElement {
       :host {
         display: inline-block;
         font-style: italic;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <slot></slot>

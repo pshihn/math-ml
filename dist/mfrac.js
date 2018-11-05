@@ -29,6 +29,8 @@ let MathFracElement = class MathFracElement extends MathMLElement {
         vertical-align: middle;
         align-self: self-start;
         margin: 0 0.16em;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       #mfracN, #mfracD {
         font-size: 0.9em;
@@ -93,7 +95,8 @@ let MathFracElement = class MathFracElement extends MathMLElement {
     <div style="display: hidden;"><slot @slotchange="${this.refreshSlot}"></slot></div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.refreshSlot();
     }
     refreshSlot() {

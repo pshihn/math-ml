@@ -23,6 +23,8 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
       :host {
         display: inline-block;
         margin: 0 0.16em;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .vertical.layout.reverse {
         -ms-flex-direction: column-reverse;
@@ -57,7 +59,8 @@ let MathUnderOverElement = class MathUnderOverElement extends MathMLElement {
     </div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         const s = this.style;
         switch (this.align) {
             case 'right':

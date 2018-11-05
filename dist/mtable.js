@@ -28,6 +28,8 @@ let MathTableElement = class MathTableElement extends MathTableBaseElement {
         border: var(--math-table-border, 'none');
         padding: var(--math-table-padding, 0.5ex 0.4em);
         width: var(--math-table-width);
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       slot::slotted(m-tr:last-child) {
         --math-table-row-border: none;
@@ -36,7 +38,8 @@ let MathTableElement = class MathTableElement extends MathTableBaseElement {
     <slot></slot>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.updateAlignment();
         const s = this.style;
         if (this.frame) {

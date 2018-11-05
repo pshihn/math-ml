@@ -14,12 +14,15 @@ let MathPaddedElement = class MathPaddedElement extends MathMLElement {
     <style>
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <div id="mpaddedPanel"><slot></slot></div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.refresh();
     }
     refresh() {

@@ -24,6 +24,8 @@ let MathFencedElement = class MathFencedElement extends MathMLElement {
       ${HorizCenterFlex}
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       #mfencedRow {
         align-items: stretch;
@@ -35,7 +37,8 @@ let MathFencedElement = class MathFencedElement extends MathMLElement {
     </div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.refreshSlot();
     }
     isStretchyString(text) {

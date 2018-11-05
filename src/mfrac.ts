@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property, MathAlignType } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, element, property, MathAlignType, PropertyValues } from './mathml-element.js';
 
 @element('m-frac')
 export class MathFracElement extends MathMLElement {
@@ -21,6 +21,8 @@ export class MathFracElement extends MathMLElement {
         vertical-align: middle;
         align-self: self-start;
         margin: 0 0.16em;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       #mfracN, #mfracD {
         font-size: 0.9em;
@@ -86,7 +88,8 @@ export class MathFracElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.refreshSlot();
   }
 

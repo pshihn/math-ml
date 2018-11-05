@@ -1,10 +1,10 @@
-import { MathMLElement, TemplateResult } from './mathml-element.js';
+import { MathMLElement, TemplateResult, PropertyValues } from './mathml-element.js';
 export declare type MathOperatorForm = 'prefix' | 'infix' | 'postfix';
 export declare class MathOElement extends MathMLElement {
     form?: MathOperatorForm;
     stretchy?: string;
     private formStyle;
     render(): TemplateResult;
-    updated(): void;
+    updated(propVals: PropertyValues): void;
     private onSlotChange;
 }

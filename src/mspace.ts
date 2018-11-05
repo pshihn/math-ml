@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, element, property } from './mathml-element.js';
 
 @element('m-space')
 export class MathSpaceElement extends MathMLElement {
@@ -12,12 +12,14 @@ export class MathSpaceElement extends MathMLElement {
       :host {
         display: inline-block;
         vertical-align: top;
+        background: var(--math-background, inherit);
       }
     </style>
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.style.width = this.width;
     this.style.height = this.height;
     this.style.marginBottom = this.depth;

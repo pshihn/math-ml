@@ -24,12 +24,15 @@ let MathTDElement = class MathTDElement extends MathTableBaseElement {
         padding-bottom: calc(var(--math-table-rowspacing)/2);
         border-bottom: var(--math-table-row-border);
         border-right: var(--math-table-column-border);
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <slot></slot>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.updateAlignment();
     }
 };

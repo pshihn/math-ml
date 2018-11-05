@@ -1,4 +1,4 @@
-import { html, TemplateResult, element } from './mathml-element.js';
+import { html, PropertyValues, TemplateResult, element } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
 @element('m-tr')
@@ -8,6 +8,8 @@ export class MathTRElement extends MathTableBaseElement {
     <style>
       :host {
         display: table-row;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       slot::slotted(m-td:last-child) {
         --math-table-column-border: none;
@@ -17,7 +19,8 @@ export class MathTRElement extends MathTableBaseElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.updateAlignment();
     this.refreshSlot();
   }

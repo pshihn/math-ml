@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, element, property, PropertyValues } from './mathml-element.js';
 
 const SVGNS = 'http://www.w3.org/2000/svg';
 
@@ -12,6 +12,8 @@ export class MathEncloseElement extends MathMLElement {
       :host {
         display: inline-block;
         position: relative;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       svg {
         position: absolute;
@@ -30,7 +32,8 @@ export class MathEncloseElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.refresh();
   }
 

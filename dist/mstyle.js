@@ -14,6 +14,8 @@ let MathStyleElement = class MathStyleElement extends MathMLElement {
     <style>
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <slot></slot>

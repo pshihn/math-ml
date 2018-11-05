@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, element } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 
 @element('m-sqrt')
@@ -11,6 +11,8 @@ export class MathSqrtElement extends MathMLElement {
         display: inline-block;
         vertical-align: bottom;
         align-self: center;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .msqrtContent {
         padding: 1px 0.05em 0 0.2em;
@@ -41,7 +43,8 @@ export class MathSqrtElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.onSlotCange();
   }
 

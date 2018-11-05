@@ -14,6 +14,8 @@ let MathRootElement = class MathRootElement extends MathMLElement {
       :host {
         display: inline-block;
         vertical-align: bottom;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .msqrtContent {
         padding: 1px 0.05em 0 0.2em;
@@ -50,7 +52,8 @@ let MathRootElement = class MathRootElement extends MathMLElement {
     </div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.onSlotCange();
     }
     onSlotCange() {
