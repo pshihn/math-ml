@@ -13,7 +13,7 @@ Math-ML is implemented using custom elements. There's a corresponding element fo
 
 This is available as a polyfill as well. If MathML is not detected on the browser (every browser except Firefox), the polyfill replaces all `<math>` nodes with corresponding `<math-ml>` nodes. 
 
-_Note: It's not feature complete with the MathML spec, but supports most complicates cases as seen in the [Torture Test](https://pshihn.github.io/math-ml/examples/examples/torture.html)._
+_Note: It's not feature complete with the MathML spec, but supports most complicates cases as seen in the [Torture Test](https://pshihn.github.io/math-ml/examples/torture.html)._
 
 ## Usage
 
@@ -65,9 +65,9 @@ These examples are ported versions from [Mozilla Dev Network](https://developer.
 
 [Proving the Pythagorean theorem](https://pshihn.github.io/math-ml/examples/pythagorean-theorem.html)
 
-[Deriving the Quadratic Formula](https://pshihn.github.io/math-ml/examples/examples/quadratic-formula.html)
+[Deriving the Quadratic Formula](https://pshihn.github.io/math-ml/examples/quadratic-formula.html)
 
-[Torture Test](https://pshihn.github.io/math-ml/examples/examples/torture.html)
+[Torture Test](https://pshihn.github.io/math-ml/examples/torture.html)
 
 ## Polyfill
 
