@@ -63,7 +63,6 @@ let MathPaddedElement = class MathPaddedElement extends MathMLElement {
             else {
                 this.style.width = 'auto';
             }
-            console.log(size);
         }, 50);
     }
 };
