@@ -20,6 +20,8 @@ let MathElement = class MathElement extends MathMLElement {
         text-rendering: optimizeLegibility;
         direction: ltr;
         unicode-bidi: embed;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <slot></slot>

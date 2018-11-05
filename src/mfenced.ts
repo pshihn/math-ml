@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, element, property, PropertyValues } from './mathml-element.js';
 import { HorizCenterFlex } from './styles/common-styles.js';
 import { MathOElement } from './mo.js';
 import './mo.js';
@@ -15,6 +15,8 @@ export class MathFencedElement extends MathMLElement {
       ${HorizCenterFlex}
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       #mfencedRow {
         align-items: stretch;
@@ -27,7 +29,8 @@ export class MathFencedElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.refreshSlot();
   }
 

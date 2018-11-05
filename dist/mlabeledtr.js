@@ -12,6 +12,8 @@ let MathLabeledTRElement = class MathLabeledTRElement extends MathTableBaseEleme
     <style>
       :host {
         display: table-row;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       slot::slotted(m-td:first-child) {
         display: none;
@@ -23,7 +25,8 @@ let MathLabeledTRElement = class MathLabeledTRElement extends MathTableBaseEleme
     <slot></slot>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.updateAlignment();
     }
 };

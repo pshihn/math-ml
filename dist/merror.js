@@ -16,6 +16,8 @@ let MathErrorElement = class MathErrorElement extends MathMLElement {
         font-weight: bold;
         font-family: sans-serif;
         font-size: 1.1em;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <slot></slot>

@@ -21,11 +21,13 @@ let MathSpaceElement = class MathSpaceElement extends MathMLElement {
       :host {
         display: inline-block;
         vertical-align: top;
+        background: var(--math-background, inherit);
       }
     </style>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.style.width = this.width;
         this.style.height = this.height;
         this.style.marginBottom = this.depth;

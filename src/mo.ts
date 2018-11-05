@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, element, property, PropertyValues } from './mathml-element.js';
 
 export declare type MathOperatorForm = 'prefix' | 'infix' | 'postfix';
 
@@ -23,6 +23,8 @@ export class MathOElement extends MathMLElement {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       :host(.mo-infix) {
         margin: 0 0.2em;
@@ -62,7 +64,8 @@ export class MathOElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.onSlotChange();
   }
 

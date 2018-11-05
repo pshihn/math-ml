@@ -15,6 +15,8 @@ let MathSqrtElement = class MathSqrtElement extends MathMLElement {
         display: inline-block;
         vertical-align: bottom;
         align-self: center;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .msqrtContent {
         padding: 1px 0.05em 0 0.2em;
@@ -44,7 +46,8 @@ let MathSqrtElement = class MathSqrtElement extends MathMLElement {
     </div>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.onSlotCange();
     }
     onSlotCange() {

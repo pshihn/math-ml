@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, element, property } from './mathml-element.js';
 
 @element('m-padded')
 export class MathPaddedElement extends MathMLElement {
@@ -10,13 +10,16 @@ export class MathPaddedElement extends MathMLElement {
     <style>
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
     </style>
     <div id="mpaddedPanel"><slot></slot></div>
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.refresh();
   }
 

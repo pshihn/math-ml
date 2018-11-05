@@ -20,6 +20,8 @@ let MathEncloseElement = class MathEncloseElement extends MathMLElement {
       :host {
         display: inline-block;
         position: relative;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       svg {
         position: absolute;
@@ -37,7 +39,8 @@ let MathEncloseElement = class MathEncloseElement extends MathMLElement {
     <svg></svg>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.refresh();
     }
     refresh() {

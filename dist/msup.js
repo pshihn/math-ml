@@ -14,6 +14,8 @@ let MathSupElement = class MathSupElement extends MathMLElement {
       :host {
         display: inline-block;
         position: relative;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       ::slotted(:first-child) {
         padding-right: 0.16em;

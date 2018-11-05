@@ -1,4 +1,4 @@
-import { html, TemplateResult, element, property, MathBorderType } from './mathml-element.js';
+import { html, PropertyValues, TemplateResult, element, property, MathBorderType } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
 @element('m-table')
@@ -24,6 +24,8 @@ export class MathTableElement extends MathTableBaseElement {
         border: var(--math-table-border, 'none');
         padding: var(--math-table-padding, 0.5ex 0.4em);
         width: var(--math-table-width);
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       slot::slotted(m-tr:last-child) {
         --math-table-row-border: none;
@@ -33,7 +35,8 @@ export class MathTableElement extends MathTableBaseElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     this.updateAlignment();
     const s = this.style;
     if (this.frame) {

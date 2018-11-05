@@ -12,6 +12,8 @@ let MathTRElement = class MathTRElement extends MathTableBaseElement {
     <style>
       :host {
         display: table-row;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       slot::slotted(m-td:last-child) {
         --math-table-column-border: none;
@@ -20,7 +22,8 @@ let MathTRElement = class MathTRElement extends MathTableBaseElement {
     <slot @slotchange="${this.refreshSlot}"></slot>
     `;
     }
-    updated() {
+    updated(propVals) {
+        super.updated(propVals);
         this.updateAlignment();
         this.refreshSlot();
     }

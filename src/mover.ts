@@ -1,4 +1,4 @@
-import { MathMLElement, html, TemplateResult, element, property, MathAlignType } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, element, property, MathAlignType } from './mathml-element.js';
 import { VertFlex } from './styles/common-styles.js';
 
 @element('m-over')
@@ -13,6 +13,8 @@ export class MathOverElement extends MathMLElement {
       :host {
         display: inline-block;
         margin: 0 0.16em;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .vertical.layout.reverse {
         -ms-flex-direction: column-reverse;
@@ -35,7 +37,8 @@ export class MathOverElement extends MathMLElement {
     `;
   }
 
-  updated() {
+  updated(propVals: PropertyValues) {
+    super.updated(propVals);
     const s = this.style;
     switch (this.align) {
       case 'right':

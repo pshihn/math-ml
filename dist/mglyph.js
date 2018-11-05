@@ -23,6 +23,7 @@ let MathGlyphElement = class MathGlyphElement extends MathMLElement {
     <style>
       :host {
         display: inline-block;
+        background: var(--math-background, inherit);
       }
       img {
         display: block;

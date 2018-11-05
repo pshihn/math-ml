@@ -1,6 +1,6 @@
-import { TemplateResult } from './mathml-element.js';
+import { TemplateResult, PropertyValues } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 export declare class MathLabeledTRElement extends MathTableBaseElement {
     render(): TemplateResult;
-    updated(): void;
+    updated(propVals: PropertyValues): void;
 }

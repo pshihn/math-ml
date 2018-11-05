@@ -14,6 +14,8 @@ let MathSElement = class MathSElement extends MathMLElement {
     <style>
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       :host:before {
         content: "\\0022";

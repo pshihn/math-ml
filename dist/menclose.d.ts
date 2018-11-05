@@ -1,8 +1,8 @@
-import { MathMLElement, TemplateResult } from './mathml-element.js';
+import { MathMLElement, TemplateResult, PropertyValues } from './mathml-element.js';
 export declare class MathEncloseElement extends MathMLElement {
     notation: string;
     render(): TemplateResult;
-    updated(): void;
+    updated(propVals: PropertyValues): void;
     private refresh;
     private adjustPadding;
     private redraw;

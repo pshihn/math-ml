@@ -9,6 +9,8 @@ export class MathRowElement extends MathMLElement {
       ${HorizFlex}
       :host {
         display: inline-block;
+        color: var(--math-color, inherit);
+        background: var(--math-background, inherit);
       }
       .layout.horizontal {
         align-items: baseline;
