@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+  <title>Math-ML: Polyfill example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 16px;
+    }
+  </style>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
+  <script async src="../dist/mathml.min.js"></script>
+  <script async src="../dist/mathml.polyfill.js"></script>
+</head>
+
+<body>
+  <math>
+    <mstyle displaystyle="true" mathcolor="teal">
+      <mrow>
+        <munderover>
+          <mo stretchy="true" form="prefix">∑</mo>
+          <mrow>
+            <mi>i</mi>
+            <mo form="infix">=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mi>n</mi>
+        </munderover>
+        <mstyle displaystyle="true">
+          <mfrac>
+            <mn>1</mn>
+            <mi>n</mi>
+          </mfrac>
+        </mstyle>
+      </mrow>
+    </mstyle>
+  </math>
+</body>
+
+</html>

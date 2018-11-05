@@ -1,8 +1,6 @@
 import minify from 'rollup-plugin-babel-minify';
 import resolve from 'rollup-plugin-node-resolve';
 
-const input = 'dist/all.js';
-
 function onwarn(warning) {
   if (warning.code === 'THIS_IS_UNDEFINED')
     return;
@@ -11,7 +9,7 @@ function onwarn(warning) {
 
 export default [
   {
-    input,
+    input: 'dist/all.js',
     output: {
       file: `dist/mathml.min.js`,
       format: 'iife',
@@ -19,5 +17,15 @@ export default [
     },
     onwarn,
     plugins: [resolve(), minify({ comments: false })]
+  },
+  {
+    input: 'dist/polyfill.js',
+    output: {
+      file: `dist/mathml.polyfill.js`,
+      format: 'iife',
+      name: 'mathmlPolyfill'
+    },
+    onwarn,
+    plugins: [minify({ comments: false })]
   }
 ];

@@ -1,8 +1,11 @@
 {
   "name": "math-ml",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Web components to replicate MathML",
-  "main": "index.js",
+  "main": "dist/mathml.min.js",
+  "browser": "dist/mathml.min.js",
+  "module": "dist/all.js",
+  "types": "dist/all.d.ts",
   "scripts": {
     "build": "tsc && rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,9 +17,10 @@
   "keywords": [
     "mathml",
     "webcomponents",
-    "\"web",
-    "components\"",
-    "math"
+    "web components",
+    "custom elements",
+    "math",
+    "equations"
   ],
   "author": "Preet Shihn <preetshihn@gmail.com>",
   "license": "MIT",
