@@ -49,7 +49,7 @@ export class MathMultiScriptsElement extends MathMLElement {
       return;
     }
     const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
-    if (nodes.length === 1 && ((nodes[0] as HTMLElement).tagName === 'm-prescripts'.toUpperCase())) {
+    if (nodes.length === 1 && ((nodes[0] as HTMLElement).tagName === 'math-prescripts'.toUpperCase())) {
       return;
     }
 
@@ -61,7 +61,7 @@ export class MathMultiScriptsElement extends MathMLElement {
         let current = postNodes;
         for (let i = 1; i < nodes.length; i++) {
           const n = nodes[i] as HTMLElement;
-          if (n.tagName === 'm-prescripts'.toUpperCase()) {
+          if (n.tagName === 'math-prescripts'.toUpperCase()) {
             current = preNodes;
           } else {
             if (!current[0]) {

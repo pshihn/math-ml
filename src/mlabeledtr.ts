@@ -11,10 +11,10 @@ export class MathLabeledTRElement extends MathTableBaseElement {
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-td:first-child) {
+      slot::slotted(math-td:first-child) {
         display: none;
       }
-      slot::slotted(m-td:last-child) {
+      slot::slotted(math-td:last-child) {
         --math-table-column-border: none;
       }
     </style>
