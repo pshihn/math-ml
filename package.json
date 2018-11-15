@@ -1,6 +1,6 @@
 {
   "name": "mathml-elements",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Web components to replicate MathML",
   "main": "dist/bundled/mathml.min.js",
   "browser": "dist/bundled/mathml.min.js",

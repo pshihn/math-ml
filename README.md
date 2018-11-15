@@ -59,6 +59,16 @@ Raw MathML version:
 </math>
 ```
 
+## As a MathML Polyfill
+
+Math-ML comes with a polyfill that will check if your browser has built in MathML support. If not, then it replaces all MathML elements with Math-ML custom elements.
+
+To use the polyfill:
+
+```html
+<script src="https://unpkg.com/mathml-elements@latest/dist/bundled/mathml.polyfill.js"></script>
+```
+
 ## Examples
 
 These examples are ported versions from [Mozilla Dev Network](https://developer.mozilla.org/en-US/docs/Web/MathML/Examples).
@@ -69,15 +79,6 @@ These examples are ported versions from [Mozilla Dev Network](https://developer.
 
 [Torture Test](https://pshihn.github.io/math-ml/examples/torture.html)
 
-## Polyfill
-
-Math-ML comes with a polyfill that will check if your browser has built in MathML support. If not, then it replaces all MathML elements with Math-ML custom elements.
-
-To use the polyfill:
-
-```html
-<script src="https://unpkg.com/mathml-elements@latest/dist/bundled/mathml.polyfill.js"></script>
-```
 
 ## Custom Element support
 
