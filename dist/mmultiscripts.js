@@ -157,6 +157,6 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
     }
 };
 MathMultiScriptsElement = __decorate([
-    element('m-multiscripts')
+    element('math-multiscripts')
 ], MathMultiScriptsElement);
 export { MathMultiScriptsElement };

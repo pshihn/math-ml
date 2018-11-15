@@ -1,7 +1,7 @@
 import { html, PropertyValues, TemplateResult, element } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
-@element('m-tr')
+@element('math-tr')
 export class MathTRElement extends MathTableBaseElement {
   render(): TemplateResult {
     return html`
@@ -11,7 +11,7 @@ export class MathTRElement extends MathTableBaseElement {
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-td:last-child) {
+      slot::slotted(math-td:last-child) {
         --math-table-column-border: none;
       }
     </style>
@@ -42,7 +42,7 @@ export class MathTRElement extends MathTableBaseElement {
       });
       if (split.length > 1) {
         const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
-          return (d as HTMLElement).tagName === 'M-TD';
+          return (d as HTMLElement).tagName === 'MATH-TD';
         });
         for (let i = 0; i < split.length; i++) {
           if (i >= nodes.length) {

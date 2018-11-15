@@ -21,6 +21,6 @@ let MathTextElement = class MathTextElement extends MathMLElement {
     }
 };
 MathTextElement = __decorate([
-    element('m-text')
+    element('math-text')
 ], MathTextElement);
 export { MathTextElement };

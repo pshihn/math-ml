@@ -21,6 +21,6 @@ let MathIElement = class MathIElement extends MathMLElement {
     }
 };
 MathIElement = __decorate([
-    element('m-i')
+    element('math-i')
 ], MathIElement);
 export { MathIElement };

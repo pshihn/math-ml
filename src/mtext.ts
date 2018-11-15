@@ -1,6 +1,6 @@
 import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
 
-@element('m-text')
+@element('math-text')
 export class MathTextElement extends MathMLElement {
   render(): TemplateResult {
     return html`

@@ -19,6 +19,6 @@ let MathNoneElement = class MathNoneElement extends MathMLElement {
     }
 };
 MathNoneElement = __decorate([
-    element('m-none')
+    element('math-none')
 ], MathNoneElement);
 export { MathNoneElement };

@@ -951,7 +951,7 @@
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${i}</td>
         <td><img src="${data[i].img}"></td>
-        <td>${data[i].math.replace(/<m/g, '<m-').replace(/<m-ath/g, '<math-ml').replace(/<\/m/g, '</m-').replace(/<\/m-ath/g, '</math-ml').replace(/<none/g, '<m-none').replace(/<\/none/g, '</m-none')}</td>
+        <td>${data[i].math.replace(/<m/g, '<math-').replace(/<math-ath/g, '<math-ml').replace(/<\/m/g, '</math-').replace(/<\/math-ath/g, '</math-ml').replace(/<none/g, '<math-none').replace(/<\/none/g, '</math-none')}</td>
         <td>${data[i].math}</td>
       `;
       if (data[i].tofix) {

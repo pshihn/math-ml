@@ -174,6 +174,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathFracElement.prototype, "linethickness", void 0);
 MathFracElement = __decorate([
-    element('m-frac')
+    element('math-frac')
 ], MathFracElement);
 export { MathFracElement };

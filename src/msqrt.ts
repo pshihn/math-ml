@@ -1,7 +1,7 @@
 import { MathMLElement, PropertyValues, html, TemplateResult, element } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 
-@element('m-sqrt')
+@element('math-sqrt')
 export class MathSqrtElement extends MathMLElement {
   render(): TemplateResult {
     return html`

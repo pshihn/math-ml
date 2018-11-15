@@ -81,6 +81,6 @@ let MathRootElement = class MathRootElement extends MathMLElement {
     }
 };
 MathRootElement = __decorate([
-    element('m-root')
+    element('math-root')
 ], MathRootElement);
 export { MathRootElement };

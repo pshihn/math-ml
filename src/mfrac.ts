@@ -1,6 +1,6 @@
 import { MathMLElement, html, TemplateResult, element, property, MathAlignType, PropertyValues } from './mathml-element.js';
 
-@element('m-frac')
+@element('math-frac')
 export class MathFracElement extends MathMLElement {
   @property({ type: Boolean }) bevelled = false;
   @property({ type: String }) numalign: MathAlignType = 'center';

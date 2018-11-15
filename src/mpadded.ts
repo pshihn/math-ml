@@ -1,6 +1,6 @@
 import { MathMLElement, PropertyValues, html, TemplateResult, element, property } from './mathml-element.js';
 
-@element('m-padded')
+@element('math-padded')
 export class MathPaddedElement extends MathMLElement {
   @property({ type: String }) height?: string;
   @property({ type: String }) width?: string;

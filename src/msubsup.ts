@@ -1,7 +1,7 @@
 import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 
-@element('m-subsup')
+@element('math-subsup')
 export class MathSubSupElement extends MathMLElement {
   private pendingLayout = false;
 

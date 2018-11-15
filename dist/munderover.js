@@ -117,6 +117,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathUnderOverElement.prototype, "align", void 0);
 MathUnderOverElement = __decorate([
-    element('m-underover')
+    element('math-underover')
 ], MathUnderOverElement);
 export { MathUnderOverElement };

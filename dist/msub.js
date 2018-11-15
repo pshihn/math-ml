@@ -67,6 +67,6 @@ let MathSubElement = class MathSubElement extends MathMLElement {
     }
 };
 MathSubElement = __decorate([
-    element('m-sub')
+    element('math-sub')
 ], MathSubElement);
 export { MathSubElement };

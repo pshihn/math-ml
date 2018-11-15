@@ -161,6 +161,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathOElement.prototype, "stretchy", void 0);
 MathOElement = __decorate([
-    element('m-o')
+    element('math-o')
 ], MathOElement);
 export { MathOElement };

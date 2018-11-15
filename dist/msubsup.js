@@ -90,6 +90,6 @@ let MathSubSupElement = class MathSubSupElement extends MathMLElement {
     }
 };
 MathSubSupElement = __decorate([
-    element('m-subsup')
+    element('math-subsup')
 ], MathSubSupElement);
 export { MathSubSupElement };

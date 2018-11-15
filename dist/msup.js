@@ -62,6 +62,6 @@ let MathSupElement = class MathSupElement extends MathMLElement {
     }
 };
 MathSupElement = __decorate([
-    element('m-sup')
+    element('math-sup')
 ], MathSupElement);
 export { MathSupElement };

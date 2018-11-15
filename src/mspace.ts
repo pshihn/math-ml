@@ -1,6 +1,6 @@
 import { MathMLElement, PropertyValues, html, TemplateResult, element, property } from './mathml-element.js';
 
-@element('m-space')
+@element('math-space')
 export class MathSpaceElement extends MathMLElement {
   @property({ type: String }) width = '0em';
   @property({ type: String }) height = '0ex';

@@ -19,6 +19,6 @@ let MathPreScriptsElement = class MathPreScriptsElement extends MathMLElement {
     }
 };
 MathPreScriptsElement = __decorate([
-    element('m-prescripts')
+    element('math-prescripts')
 ], MathPreScriptsElement);
 export { MathPreScriptsElement };

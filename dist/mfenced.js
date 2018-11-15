@@ -123,6 +123,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathFencedElement.prototype, "separators", void 0);
 MathFencedElement = __decorate([
-    element('m-fenced')
+    element('math-fenced')
 ], MathFencedElement);
 export { MathFencedElement };

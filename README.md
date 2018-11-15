@@ -9,7 +9,7 @@ MathML has been part of part of the HTML5 spec for some time now, but many brows
 
 ## Implementation
 
-Math-ML is implemented using custom elements. There's a corresponding element for every MathML node. The root `<math>` node is replaced by `<math-ml>`. For all other nodes, the prefix `m` is replaces with `m-`. For example, `<mrow>` becomes `<m-row>` and `<msqrt>` becomes `<m-sqrt>`.
+Math-ML is implemented using custom elements. There's a corresponding element for every MathML node. The root `<math>` node is replaced by `<math-ml>`. For all other nodes, the prefix `m` is replaces with `math-`. For example, `<mrow>` becomes `<math-row>` and `<msqrt>` becomes `<math-sqrt>`.
 
 This is available as a polyfill as well. If MathML is not detected on the browser (every browser except Firefox), the polyfill replaces all `<math>` nodes with corresponding `<math-ml>` nodes. 
 
@@ -34,14 +34,14 @@ To create the following expression:
 Using Math-ML components:
 ```html
 <math-ml>
-  <m-row>
-    <m-sup>
-      <m-i>x</m-i><m-n>2</m-n>
-    </m-sup>
-    <m-sup>
-      <m-i>y</m-i><m-n>2</m-n>
-    </m-sup>
-  </m-row>
+  <math-row>
+    <math-sup>
+      <math-i>x</math-i><math-n>2</math-n>
+    </math-sup>
+    <math-sup>
+      <math-i>y</math-i><math-n>2</math-n>
+    </math-sup>
+  </math-row>
 </math-ml>
 ```
 

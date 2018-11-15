@@ -20,6 +20,6 @@ let MathNElement = class MathNElement extends MathMLElement {
     }
 };
 MathNElement = __decorate([
-    element('m-n')
+    element('math-n')
 ], MathNElement);
 export { MathNElement };

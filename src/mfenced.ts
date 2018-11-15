@@ -3,7 +3,7 @@ import { HorizCenterFlex } from './styles/common-styles.js';
 import { MathOElement } from './mo.js';
 import './mo.js';
 
-@element('m-fenced')
+@element('math-fenced')
 export class MathFencedElement extends MathMLElement {
   @property({ type: String }) close = ')';
   @property({ type: String }) open = '(';

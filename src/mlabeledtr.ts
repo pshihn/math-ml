@@ -1,7 +1,7 @@
 import { html, TemplateResult, element, PropertyValues } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
-@element('m-labeledtr')
+@element('math-labeledtr')
 export class MathLabeledTRElement extends MathTableBaseElement {
   render(): TemplateResult {
     return html`

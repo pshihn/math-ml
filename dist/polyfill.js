@@ -43,10 +43,10 @@ function getCustomElementName(node) {
         case 'math':
             return 'math-ml';
         case 'none':
-            return 'm-none';
+            return 'math-none';
         default:
             if (name.indexOf('m') === 0) {
-                return `m-${name.substring(1)}`;
+                return `math-${name.substring(1)}`;
             }
             break;
     }

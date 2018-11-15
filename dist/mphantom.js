@@ -19,6 +19,6 @@ let MathPhantomElement = class MathPhantomElement extends MathMLElement {
     }
 };
 MathPhantomElement = __decorate([
-    element('m-phantom')
+    element('math-phantom')
 ], MathPhantomElement);
 export { MathPhantomElement };

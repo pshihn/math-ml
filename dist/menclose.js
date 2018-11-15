@@ -210,6 +210,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathEncloseElement.prototype, "notation", void 0);
 MathEncloseElement = __decorate([
-    element('m-enclose')
+    element('math-enclose')
 ], MathEncloseElement);
 export { MathEncloseElement };

@@ -71,6 +71,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathOverElement.prototype, "align", void 0);
 MathOverElement = __decorate([
-    element('m-over')
+    element('math-over')
 ], MathOverElement);
 export { MathOverElement };

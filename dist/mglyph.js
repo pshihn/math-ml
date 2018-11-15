@@ -54,6 +54,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathGlyphElement.prototype, "alt", void 0);
 MathGlyphElement = __decorate([
-    element('m-glyph')
+    element('math-glyph')
 ], MathGlyphElement);
 export { MathGlyphElement };

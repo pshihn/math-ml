@@ -31,6 +31,6 @@ let MathLabeledTRElement = class MathLabeledTRElement extends MathTableBaseEleme
     }
 };
 MathLabeledTRElement = __decorate([
-    element('m-labeledtr')
+    element('math-labeledtr')
 ], MathLabeledTRElement);
 export { MathLabeledTRElement };
