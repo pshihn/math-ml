@@ -75,6 +75,6 @@ let MathSqrtElement = class MathSqrtElement extends MathMLElement {
     }
 };
 MathSqrtElement = __decorate([
-    element('m-sqrt')
+    element('math-sqrt')
 ], MathSqrtElement);
 export { MathSqrtElement };

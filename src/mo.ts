@@ -2,7 +2,7 @@ import { MathMLElement, html, TemplateResult, element, property, PropertyValues 
 
 export declare type MathOperatorForm = 'prefix' | 'infix' | 'postfix';
 
-@element('m-o')
+@element('math-o')
 export class MathOElement extends MathMLElement {
   @property({ type: String }) form?: MathOperatorForm;
   @property({ type: String }) stretchy?: string;

@@ -1,7 +1,7 @@
 import { MathMLElement, PropertyValues, html, TemplateResult, element, property, MathAlignType } from './mathml-element.js';
 import { VertFlex } from './styles/common-styles.js';
 
-@element('m-underover')
+@element('math-underover')
 export class MathUnderOverElement extends MathMLElement {
   @property({ type: Boolean, reflect: true }) accent = false;
   @property({ type: Boolean, reflect: true }) accentunder = false;

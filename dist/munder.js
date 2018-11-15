@@ -66,6 +66,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathUnderElement.prototype, "align", void 0);
 MathUnderElement = __decorate([
-    element('m-under')
+    element('math-under')
 ], MathUnderElement);
 export { MathUnderElement };

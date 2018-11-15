@@ -15,10 +15,10 @@ let MathLabeledTRElement = class MathLabeledTRElement extends MathTableBaseEleme
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-td:first-child) {
+      slot::slotted(math-td:first-child) {
         display: none;
       }
-      slot::slotted(m-td:last-child) {
+      slot::slotted(math-td:last-child) {
         --math-table-column-border: none;
       }
     </style>
@@ -31,6 +31,6 @@ let MathLabeledTRElement = class MathLabeledTRElement extends MathTableBaseEleme
     }
 };
 MathLabeledTRElement = __decorate([
-    element('m-labeledtr')
+    element('math-labeledtr')
 ], MathLabeledTRElement);
 export { MathLabeledTRElement };

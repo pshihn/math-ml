@@ -25,6 +25,6 @@ let MathErrorElement = class MathErrorElement extends MathMLElement {
     }
 };
 MathErrorElement = __decorate([
-    element('m-error')
+    element('math-error')
 ], MathErrorElement);
 export { MathErrorElement };

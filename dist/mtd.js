@@ -37,6 +37,6 @@ let MathTDElement = class MathTDElement extends MathTableBaseElement {
     }
 };
 MathTDElement = __decorate([
-    element('m-td')
+    element('math-td')
 ], MathTDElement);
 export { MathTDElement };

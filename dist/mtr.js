@@ -15,7 +15,7 @@ let MathTRElement = class MathTRElement extends MathTableBaseElement {
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-td:last-child) {
+      slot::slotted(math-td:last-child) {
         --math-table-column-border: none;
       }
     </style>
@@ -44,7 +44,7 @@ let MathTRElement = class MathTRElement extends MathTableBaseElement {
             });
             if (split.length > 1) {
                 const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
-                    return d.tagName === 'M-TD';
+                    return d.tagName === 'MATH-TD';
                 });
                 for (let i = 0; i < split.length; i++) {
                     if (i >= nodes.length) {
@@ -57,6 +57,6 @@ let MathTRElement = class MathTRElement extends MathTableBaseElement {
     }
 };
 MathTRElement = __decorate([
-    element('m-tr')
+    element('math-tr')
 ], MathTRElement);
 export { MathTRElement };

@@ -1,6 +1,6 @@
 import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
 
-@element('m-i')
+@element('math-i')
 export class MathIElement extends MathMLElement {
   render(): TemplateResult {
     return html`

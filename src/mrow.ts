@@ -1,7 +1,7 @@
 import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 
-@element('m-row')
+@element('math-row')
 export class MathRowElement extends MathMLElement {
   render(): TemplateResult {
     return html`
@@ -50,16 +50,16 @@ export class MathRowElement extends MathMLElement {
       }
       const tagName = (nodes[i] as HTMLElement).tagName.toLowerCase();
       switch (tagName) {
-        case 'm-underover':
-        case 'm-under':
-        case 'm-over':
-        case 'm-subsup':
+        case 'math-underover':
+        case 'math-under':
+        case 'math-over':
+        case 'math-subsup':
           centeringNodeCount++;
           break;
-        case 'm-o':
+        case 'math-o':
           opCount++;
           break;
-        case 'm-table':
+        case 'math-table':
           center = true;
           break;
         default:

@@ -27,6 +27,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathStyleElement.prototype, "displaystyle", void 0);
 MathStyleElement = __decorate([
-    element('m-style')
+    element('math-style')
 ], MathStyleElement);
 export { MathStyleElement };

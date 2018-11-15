@@ -2,7 +2,7 @@ import { MathMLElement, html, TemplateResult, element, property, PropertyValues 
 
 const SVGNS = 'http://www.w3.org/2000/svg';
 
-@element('m-enclose')
+@element('math-enclose')
 export class MathEncloseElement extends MathMLElement {
   @property({ type: String }) notation = 'longdiv';
 

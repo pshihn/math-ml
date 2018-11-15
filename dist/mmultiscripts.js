@@ -55,7 +55,7 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
             return;
         }
         const nodes = slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE);
-        if (nodes.length === 1 && (nodes[0].tagName === 'm-prescripts'.toUpperCase())) {
+        if (nodes.length === 1 && (nodes[0].tagName === 'math-prescripts'.toUpperCase())) {
             return;
         }
         if (nodes.length > 2) {
@@ -66,7 +66,7 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
                 let current = postNodes;
                 for (let i = 1; i < nodes.length; i++) {
                     const n = nodes[i];
-                    if (n.tagName === 'm-prescripts'.toUpperCase()) {
+                    if (n.tagName === 'math-prescripts'.toUpperCase()) {
                         current = preNodes;
                     }
                     else {
@@ -157,6 +157,6 @@ let MathMultiScriptsElement = class MathMultiScriptsElement extends MathMLElemen
     }
 };
 MathMultiScriptsElement = __decorate([
-    element('m-multiscripts')
+    element('math-multiscripts')
 ], MathMultiScriptsElement);
 export { MathMultiScriptsElement };

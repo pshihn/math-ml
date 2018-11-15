@@ -1,7 +1,7 @@
 import { html, PropertyValues, TemplateResult, element, property, MathBorderType } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
-@element('m-table')
+@element('math-table')
 export class MathTableElement extends MathTableBaseElement {
   @property({ type: String }) columnlines?: MathBorderType = 'none';
   @property({ type: String }) rowlines?: MathBorderType = 'none';
@@ -27,7 +27,7 @@ export class MathTableElement extends MathTableBaseElement {
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-tr:last-child) {
+      slot::slotted(math-tr:last-child) {
         --math-table-row-border: none;
       }
     </style>
@@ -124,7 +124,7 @@ export class MathTableElement extends MathTableBaseElement {
         const slot = this.shadowRoot!.querySelector('slot') as HTMLSlotElement;
         if (slot) {
           slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
-            return (d as HTMLElement).tagName === 'M-TR' || (d as HTMLElement).tagName === 'M-LABELEDTR';
+            return (d as HTMLElement).tagName === 'MATH-TR' || (d as HTMLElement).tagName === 'MATH-LABELEDTR';
           }).forEach((d) => {
             const row = (d as MathTableBaseElement);
             row.columnalign = row.columnalign || (this.columnalign!).trim();

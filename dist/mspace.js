@@ -46,6 +46,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathSpaceElement.prototype, "depth", void 0);
 MathSpaceElement = __decorate([
-    element('m-space')
+    element('math-space')
 ], MathSpaceElement);
 export { MathSpaceElement };

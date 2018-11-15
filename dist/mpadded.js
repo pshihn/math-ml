@@ -75,6 +75,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathPaddedElement.prototype, "width", void 0);
 MathPaddedElement = __decorate([
-    element('m-padded')
+    element('math-padded')
 ], MathPaddedElement);
 export { MathPaddedElement };

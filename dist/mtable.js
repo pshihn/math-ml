@@ -31,7 +31,7 @@ let MathTableElement = class MathTableElement extends MathTableBaseElement {
         color: var(--math-color, inherit);
         background: var(--math-background, inherit);
       }
-      slot::slotted(m-tr:last-child) {
+      slot::slotted(math-tr:last-child) {
         --math-table-row-border: none;
       }
     </style>
@@ -126,7 +126,7 @@ let MathTableElement = class MathTableElement extends MathTableBaseElement {
                 const slot = this.shadowRoot.querySelector('slot');
                 if (slot) {
                     slot.assignedNodes().filter((d) => d.nodeType === Node.ELEMENT_NODE).filter((d) => {
-                        return d.tagName === 'M-TR' || d.tagName === 'M-LABELEDTR';
+                        return d.tagName === 'MATH-TR' || d.tagName === 'MATH-LABELEDTR';
                     }).forEach((d) => {
                         const row = d;
                         row.columnalign = row.columnalign || (this.columnalign).trim();
@@ -165,7 +165,7 @@ __decorate([
     __metadata("design:type", String)
 ], MathTableElement.prototype, "width", void 0);
 MathTableElement = __decorate([
-    element('m-table'),
+    element('math-table'),
     __metadata("design:paramtypes", [])
 ], MathTableElement);
 export { MathTableElement };

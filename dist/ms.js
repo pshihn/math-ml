@@ -45,6 +45,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathSElement.prototype, "rquote", void 0);
 MathSElement = __decorate([
-    element('m-s')
+    element('math-s')
 ], MathSElement);
 export { MathSElement };

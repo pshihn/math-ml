@@ -1,6 +1,6 @@
 import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
 
-@element('m-glyph')
+@element('math-glyph')
 export class MathGlyphElement extends MathMLElement {
   @property({ type: String }) src?: string;
   @property({ type: String }) width = 'auto';
