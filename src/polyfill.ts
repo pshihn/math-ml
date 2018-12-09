@@ -1,5 +1,12 @@
 export function polyfill(mathNode: Element): Element {
   const root = document.createElement(getCustomElementName(mathNode));
+  const attrs = mathNode.attributes;
+  if (attrs && attrs.length) {
+    for (let x = 0; x < attrs.length; x++) {
+      const attr = attrs[x];
+      root.setAttribute(attr.name, attr.value);
+    }
+  }
   polyfillChildren(root, mathNode);
   const parent = mathNode.parentElement;
   if (parent) {
