@@ -3,7 +3,7 @@
 
 ![MathML example](https://i.imgur.com/NZvMjWM.png)
 
-A small (12.7kb gzipped) implementation of [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) using custom-elements. 
+A small-ish (compared to alternatives ~ 12kb gzipped) implementation of [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) using custom-elements. 
 
 MathML has been part of part of the HTML5 spec for some time now, but many browsers don't support it (Chrome, for example). This is a simple attempt to use basic javascript, CSS and some SVG to implement MathML compatible notation that works across all browsers. _(All rendering is done on the client side)._
 
