@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { html, element, property } from './mathml-element.js';
+import { html, customElement, property } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 let MathTableElement = class MathTableElement extends MathTableBaseElement {
     constructor() {
@@ -165,7 +165,7 @@ __decorate([
     __metadata("design:type", String)
 ], MathTableElement.prototype, "width", void 0);
 MathTableElement = __decorate([
-    element('math-table'),
+    customElement('math-table'),
     __metadata("design:paramtypes", [])
 ], MathTableElement);
 export { MathTableElement };

@@ -1,6 +1,6 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement, property } from './mathml-element.js';
 
-@element('math-style')
+@customElement('math-style')
 export class MathStyleElement extends MathMLElement {
   @property({ type: String }) displaystyle?: string;
 

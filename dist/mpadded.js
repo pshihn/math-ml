@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 let MathPaddedElement = class MathPaddedElement extends MathMLElement {
     render() {
         return html `
@@ -75,6 +75,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathPaddedElement.prototype, "width", void 0);
 MathPaddedElement = __decorate([
-    element('math-padded')
+    customElement('math-padded')
 ], MathPaddedElement);
 export { MathPaddedElement };

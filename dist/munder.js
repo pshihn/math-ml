@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 import { VertFlex } from './styles/common-styles.js';
 let MathUnderElement = class MathUnderElement extends MathMLElement {
     constructor() {
@@ -66,6 +66,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathUnderElement.prototype, "align", void 0);
 MathUnderElement = __decorate([
-    element('math-under')
+    customElement('math-under')
 ], MathUnderElement);
 export { MathUnderElement };

@@ -1,7 +1,7 @@
-import { MathMLElement, PropertyValues, html, TemplateResult, element } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, customElement } from './mathml-element.js';
 import { HorizFlex } from './styles/common-styles.js';
 
-@element('math-root')
+@customElement('math-root')
 export class MathRootElement extends MathMLElement {
   render(): TemplateResult {
     return html`

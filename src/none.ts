@@ -1,6 +1,6 @@
-import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement } from './mathml-element.js';
 
-@element('math-none')
+@customElement('math-none')
 export class MathNoneElement extends MathMLElement {
   render(): TemplateResult {
     return html`

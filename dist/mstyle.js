@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 let MathStyleElement = class MathStyleElement extends MathMLElement {
     render() {
         return html `
@@ -27,6 +27,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathStyleElement.prototype, "displaystyle", void 0);
 MathStyleElement = __decorate([
-    element('math-style')
+    customElement('math-style')
 ], MathStyleElement);
 export { MathStyleElement };

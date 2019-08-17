@@ -1,7 +1,7 @@
-import { html, PropertyValues, TemplateResult, element, property, MathBorderType } from './mathml-element.js';
+import { html, PropertyValues, TemplateResult, customElement, property, MathBorderType } from './mathml-element.js';
 import { MathTableBaseElement } from './mtable-base.js';
 
-@element('math-table')
+@customElement('math-table')
 export class MathTableElement extends MathTableBaseElement {
   @property({ type: String }) columnlines?: MathBorderType = 'none';
   @property({ type: String }) rowlines?: MathBorderType = 'none';

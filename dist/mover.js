@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 import { VertFlex } from './styles/common-styles.js';
 let MathOverElement = class MathOverElement extends MathMLElement {
     constructor() {
@@ -71,6 +71,6 @@ __decorate([
     __metadata("design:type", String)
 ], MathOverElement.prototype, "align", void 0);
 MathOverElement = __decorate([
-    element('math-over')
+    customElement('math-over')
 ], MathOverElement);
 export { MathOverElement };

@@ -1,7 +1,7 @@
-import { MathMLElement, PropertyValues, html, TemplateResult, element, property, MathAlignType } from './mathml-element.js';
+import { MathMLElement, PropertyValues, html, TemplateResult, customElement, property, MathAlignType } from './mathml-element.js';
 import { VertFlex } from './styles/common-styles.js';
 
-@element('math-over')
+@customElement('math-over')
 export class MathOverElement extends MathMLElement {
   @property({ type: Boolean, reflect: true }) accent = false;
   @property() align: MathAlignType = 'center';

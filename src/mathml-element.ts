@@ -1,8 +1,5 @@
-import { LitElement, PropertyValues } from '@polymer/lit-element/lit-element.js';
-export { html, PropertyValues } from '@polymer/lit-element/lit-element.js';
-export { TemplateResult } from 'lit-html/lit-html.js';
-export { property } from '@polymer/lit-element/lib/decorators';
-import { customElement, property } from '@polymer/lit-element/lib/decorators';
+import { LitElement, PropertyValues, property } from 'lit-element';
+export { html, PropertyValues, TemplateResult, property, customElement } from 'lit-element';
 
 export class MathMLElement extends LitElement {
   @property({ type: String }) mathbackground?: string;
@@ -16,10 +13,6 @@ export class MathMLElement extends LitElement {
       this.style.setProperty('--math-background', this.mathbackground || null);
     }
   }
-}
-
-export function element(name: string) {
-  return customElement(name as any);
 }
 
 export declare type MathAlignType = 'left' | 'center' | 'right';

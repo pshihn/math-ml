@@ -1,8 +1,8 @@
-import { MathMLElement, html, TemplateResult, element, property, PropertyValues } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement, property, PropertyValues } from './mathml-element.js';
 
 export declare type MathOperatorForm = 'prefix' | 'infix' | 'postfix';
 
-@element('math-o')
+@customElement('math-o')
 export class MathOElement extends MathMLElement {
   @property({ type: String }) form?: MathOperatorForm;
   @property({ type: String }) stretchy?: string;

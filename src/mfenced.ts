@@ -1,9 +1,9 @@
-import { MathMLElement, html, TemplateResult, element, property, PropertyValues } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement, property, PropertyValues } from './mathml-element.js';
 import { HorizCenterFlex } from './styles/common-styles.js';
 import { MathOElement } from './mo.js';
 import './mo.js';
 
-@element('math-fenced')
+@customElement('math-fenced')
 export class MathFencedElement extends MathMLElement {
   @property({ type: String }) close = ')';
   @property({ type: String }) open = '(';

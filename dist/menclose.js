@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 const SVGNS = 'http://www.w3.org/2000/svg';
 let MathEncloseElement = class MathEncloseElement extends MathMLElement {
     constructor() {
@@ -210,6 +210,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathEncloseElement.prototype, "notation", void 0);
 MathEncloseElement = __decorate([
-    element('math-enclose')
+    customElement('math-enclose')
 ], MathEncloseElement);
 export { MathEncloseElement };

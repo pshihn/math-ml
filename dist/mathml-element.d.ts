@@ -1,13 +1,10 @@
-import { LitElement, PropertyValues } from '@polymer/lit-element/lit-element.js';
-export { html, PropertyValues } from '@polymer/lit-element/lit-element.js';
-export { TemplateResult } from 'lit-html/lit-html.js';
-export { property } from '@polymer/lit-element/lib/decorators';
+import { LitElement, PropertyValues } from 'lit-element';
+export { html, PropertyValues, TemplateResult, property, customElement } from 'lit-element';
 export declare class MathMLElement extends LitElement {
     mathbackground?: string;
     mathcolor?: string;
     updated(propVals: PropertyValues): void;
 }
-export declare function element(name: string): (clazz: import("@polymer/lit-element/lib/decorators").Constructor<HTMLElement>) => any;
 export declare type MathAlignType = 'left' | 'center' | 'right';
 export declare type MathColumnAlignType = 'left' | 'center' | 'right';
 export declare type MathRowAlignType = 'axis' | 'baseline' | 'bottom' | 'center' | 'top';

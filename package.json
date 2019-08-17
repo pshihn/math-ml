@@ -1,6 +1,6 @@
 {
   "name": "mathml-elements",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Web components to replicate MathML",
   "main": "dist/bundled/mathml.min.js",
   "browser": "dist/bundled/mathml.min.js",
@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/pshihn/math-ml#readme",
   "devDependencies": {
-    "rollup": "^0.66.6",
-    "rollup-plugin-babel-minify": "^6.1.1",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "rollup": "^1.19.4",
+    "rollup-plugin-babel-minify": "^9.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@polymer/lit-element": "^0.6.2"
+    "lit-element": "^2.2.1"
   }
 }

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 let MathSpaceElement = class MathSpaceElement extends MathMLElement {
     constructor() {
         super(...arguments);
@@ -46,6 +46,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathSpaceElement.prototype, "depth", void 0);
 MathSpaceElement = __decorate([
-    element('math-space')
+    customElement('math-space')
 ], MathSpaceElement);
 export { MathSpaceElement };

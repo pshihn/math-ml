@@ -1,7 +1,7 @@
-import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement } from './mathml-element.js';
 import { AllFlex } from './styles/common-styles.js';
 
-@element('math-multiscripts')
+@customElement('math-multiscripts')
 export class MathMultiScriptsElement extends MathMLElement {
   private pendingLayout = false;
   render(): TemplateResult {

@@ -1,6 +1,6 @@
-import { MathMLElement, html, TemplateResult, element } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement } from './mathml-element.js';
 
-@element('math-prescripts')
+@customElement('math-prescripts')
 export class MathPreScriptsElement extends MathMLElement {
   render(): TemplateResult {
     return html`

@@ -1,6 +1,6 @@
-import { MathMLElement, html, TemplateResult, element, property } from './mathml-element.js';
+import { MathMLElement, html, TemplateResult, customElement, property } from './mathml-element.js';
 
-@element('math-s')
+@customElement('math-s')
 export class MathSElement extends MathMLElement {
   @property({ type: String, reflect: true }) lquote?: string;
   @property({ type: String, reflect: true }) rquote?: string;

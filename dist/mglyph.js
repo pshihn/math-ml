@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { MathMLElement, html, element, property } from './mathml-element.js';
+import { MathMLElement, html, customElement, property } from './mathml-element.js';
 let MathGlyphElement = class MathGlyphElement extends MathMLElement {
     constructor() {
         super(...arguments);
@@ -54,6 +54,6 @@ __decorate([
     __metadata("design:type", Object)
 ], MathGlyphElement.prototype, "alt", void 0);
 MathGlyphElement = __decorate([
-    element('math-glyph')
+    customElement('math-glyph')
 ], MathGlyphElement);
 export { MathGlyphElement };
